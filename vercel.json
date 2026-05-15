@@ -1,8 +1,4 @@
 {
-  "buildCommand": "hugo",
-  "outputDirectory": "public",
-  "installCommand": "",
-  "env": {
-    "HUGO_VERSION": "0.161.1"
-  }
+  "buildCommand": "npx hugo",
+  "outputDirectory": "public"
 }
