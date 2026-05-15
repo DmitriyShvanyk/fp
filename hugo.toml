@@ -1,4 +1,4 @@
-baseURL = 'https://fridayplans.com/'
+baseURL = "/"
 defaultContentLanguage = 'en'
 title = 'Friday Plans | ED Treatment Made Simple'
 disableHugoGeneratorInject = true
