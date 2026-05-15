@@ -293,10 +293,10 @@ If you need to clarify or update any information about your health, you should m
         <p class="safety__paragraph">
             If you have any questions about this drug, please talk with your doctor, nurse, pharmacist, or other health care provider.
         </p>
-
+        
         <p class="safety__paragraph">
-            <img class="safety__text-img" src="/images/safety/text-d.png" alt="">
-            <img class="safety__text-img safety__text-img--mobile" src="/images/safety/text-m.png" alt="">
+            <img class="safety__text-img" src="{{ "images/safety/text-d.png" | absURL }}" alt="">
+            <img class="safety__text-img safety__text-img--mobile" src="{{ "images/safety/text-m.png" | absURL }}" alt="">
         </p>
         <p class="safety__paragraph" style="display:none;">
             Under certain circumstances, chemical degradation of drugs may occur. Please call Eagle Pharmacy at (833) 556-0172 with any questions.
