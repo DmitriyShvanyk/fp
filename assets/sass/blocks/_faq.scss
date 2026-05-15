@@ -1,0 +1,287 @@
+.faq {
+    min-height: 36.188rem;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    &__container {
+        padding-top: 9.9rem;
+        padding-bottom: 4.25rem;
+        z-index: 1;
+    }
+
+    &__title {
+        font-family: $font-title;
+        font-weight: 400;
+        font-size: 2.75rem;
+        line-height: 1.16;
+        color: $cyan;
+        text-shadow: $title-shadow;
+        margin-top: 0;
+        margin-bottom: 2.313rem;
+        text-align: center;
+    }
+
+    &__menu {
+        max-width: 60.8125rem;
+        @include horizontal-center;
+        padding-top: 1.75rem;
+        position: relative;
+
+        &-line {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            width: 1px;
+            height: 14.25rem;
+            transform: translateX(-50%);
+            background-color: rgba($cyan, .32);
+        }
+
+        &-inner {
+            @include reset-list;
+            margin-bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: .825rem;
+        }
+
+        &-link {
+            color: $white;
+            font-family: $font-title;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1.3;
+            @include flex-center;
+            width: 20.875rem;
+            height: 3.9375rem;
+            text-decoration: none;
+            position: relative;
+
+            &--18 {
+                font-size: 1.125rem;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white;
+                text-decoration: none;
+
+                .faq__menu-bg {
+                    opacity: .32;
+                }
+            }
+        }
+
+        &-bg,
+        &-lines,
+        &-dot,
+        &-line-1,
+        &-line-2 {
+            position: absolute;
+        }
+
+        &-bg {
+            @include centerer;
+            @include full-size;
+            opacity: .16;
+            transition: opacity .3s ease;
+        }
+
+        &-text {
+            position: relative;
+        }
+
+        &-lines,
+        &-dot {
+            top: 50%;
+            right: 0;
+        }
+
+        &-dot {
+            transform: translateY(-50%) translateX(50%);
+        }
+
+        &-line-1,
+        &-line-2 {
+            top: 50%;
+            left: 100%;
+            height: 1px;
+        }
+
+        &-line-1 {
+            width: 5.125rem;
+            transform: translateY(-50%);
+            background-color: rgba($cyan, .32);
+        }
+
+        &-line-2 {
+            width: 5.375rem;
+            transform: translateY(-50%) rotate(-36deg);
+            transform-origin: 0 0;
+            background-color: rgba($cyan, .32);
+        }
+    }
+
+    @media (min-width: $tablet-min) {
+        &__menu-item {
+            &:nth-child(even) {
+                margin-left: auto;
+
+                .faq__menu-lines {
+                    right: auto;
+                    left: 0;
+                }
+
+                .faq__menu-line-1,
+                .faq__menu-line-2 {
+                    left: auto;
+                    right: 100%;
+                }
+
+                .faq__menu-line-2 {
+                    transform: translateY(-50%) rotate(36deg);
+                    transform-origin: 100% 100%;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            min-height: 48.31rem;
+        }
+
+        &__container {
+            padding-top: calc(9.9rem * 1.333);
+            padding-bottom: calc(4.25rem * 1.333);
+        }
+
+        &__title {
+            font-size: 3.67rem;
+            margin-bottom: 3.09rem;
+        }
+
+        &__menu {
+            max-width: 81.18rem;
+            padding-top: 2.34rem;
+
+            &-line {
+                top: .42rem;
+                height: 19.02rem;
+            }
+
+            &-inner {
+                row-gap: 1.1rem;
+            }
+
+            &-link {
+                font-size: 1.67rem;
+                width: 27.87rem;
+                height: 5.26rem;
+
+                &--18 {
+                    font-size: 1.5rem;
+                }
+            }
+
+            &-line-1 {
+                width: 6.84rem;
+            }
+
+            &-line-2 {
+                width: 7.18rem;
+            }
+        }
+    }
+
+    @media (max-width: 1020px) {
+        &__menu {
+            max-width: 736px;
+            @include horizontal-center;
+            padding-top: 28px;
+            position: relative;
+
+            &-line-1 {
+                width: 22px;
+            }
+
+            &-line-2 {
+                width: 60px;
+                transform: translateY(-50%) rotate(-79deg);
+            }
+
+            &-item {
+                &:nth-child(even) {
+                    .faq__menu-line-2 {
+                        transform: translateY(-50%) rotate(79deg);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            min-height: 32.625rem;
+        }
+
+        &__container {
+            padding-top: 6.7rem;
+            padding-bottom: 3.35rem;
+        }
+
+        &__title {
+            font-size: 34px;
+            margin-bottom: 1rem;
+        }
+
+        &__menu {
+            padding-top: 0;
+            max-width: 334px;
+            @include horizontal-center;
+
+            &-inner {
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: .825rem;
+            }
+
+            &-line {
+                top: 20px;
+                left: auto;
+                right: -1.7rem;
+                width: 1px;
+                height: calc(100% - 3.925rem);
+            }
+
+            &-line-1 {
+                width: 16px;
+            }
+
+            &-line-2 {
+                width: 14px;
+                transform: translateY(-50%) rotate(-50deg);
+            }
+
+            &-item {
+                &:nth-child(even) {
+                    .faq__menu-line-2 {
+                        transform: translateY(-50%) rotate(-50deg);
+                    }
+                }
+            }
+
+            &-dot-2 {
+                display: none;
+            }
+        }
+    }
+}

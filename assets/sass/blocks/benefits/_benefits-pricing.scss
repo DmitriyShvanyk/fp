@@ -1,0 +1,49 @@
+.benefits--pricing {
+    .benefits__container {
+        padding-bottom: 1px;
+        margin-bottom: -1rem;
+    }
+
+    .benefits__icon {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        .benefits__container {
+            margin-bottom: -1.34rem;
+        }
+
+        .benefits__icon {
+            margin-bottom: calc(1.5rem * 1.333);
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        .benefits__container {
+            padding-top: 1rem;
+            padding-bottom: 4.9rem;
+        }
+
+        .benefits__title {
+            padding-inline: 1rem;
+        }
+
+        .benefits__items {
+            row-gap: 1.38rem;
+        }
+
+        .benefits__subtitle {
+            font-size: 1.5rem;
+            margin-top: 1.65rem;
+            margin-bottom: 0;
+
+            br {
+                display: block;
+            }
+        }
+
+        .benefits__icon {
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{{ define "menu" }}{{ end }}
+
+{{ define "navbar" }}
+   {{ partial "v2/navbar.html" . }} 
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "v2/home/header.html" . }}
+    {{ partial "v1/home/trusted.html" . }}
+    {{ partial "v2/home/treatment.html" . }}
+    {{ partial "v2/home/benefits.html" . }}
+    {{ partial "v1/reviews.html" . }}
+    {{ partial "v2/home/features.html" . }}
+{{ end }}
+
+{{ define "footer" }}
+   {{ partial "v1/footer.html" . }} 
+{{ end }}
+
+{{ define "scripts" }}
+   {{ partial "v1/scripts2.html" .}}
+{{ end }}

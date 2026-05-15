@@ -1,0 +1,164 @@
+$modal-z-index: 999;
+$modal-content-width: 31.563rem;
+$modal-overlay-bg: rgba($black, .64);
+$modal-overlay-blur: blur(.25rem);
+$modal-close-size: 1.25rem;
+
+.fp-modal {
+    @include position-fixed-full;
+    @include flex-center;
+    z-index: $modal-z-index;
+    opacity: 0;
+    pointer-events: none;
+
+    &.is-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &__overlay {
+        @include position-fixed-full;
+        background: $modal-overlay-bg;
+        backdrop-filter: $modal-overlay-blur;
+    }
+
+    &__content {
+        max-width: $modal-content-width;
+        width: 100%;
+        @include horizontal-center;
+        position: relative;
+    }
+
+    &__close {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: -.938rem;
+        right: 0;
+        width: $modal-close-size;
+        height: $modal-close-size;
+        cursor: pointer;
+        z-index: 99;
+    }
+
+    &__clipped-block {
+        min-height: 17.5rem;
+
+        .clipped-block__inner {
+            padding-top: 2.9rem;
+            padding-bottom: 3rem;
+        }
+
+        .clipped-block__shape::before {
+            background-color: rgba(90, 83, 140, .4);
+            backdrop-filter: blur(12px);
+        }
+    }
+
+    &__lead {
+        font-family: $ff-space-grotesk;
+        font-size: 1.375rem;
+        line-height: 1.1;
+        padding-left: 1.563rem;
+        padding-right: 1.563rem;
+        margin-bottom: 1.65rem;
+
+        a {
+            white-space: nowrap;
+            color: #7DD468;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: #7DD468;
+                text-decoration: none
+            }
+        }
+    }
+
+    &__btns {
+        @include flex-center;
+        flex-wrap: wrap;
+        column-gap: 1rem;
+        row-gap: .75rem;
+    }
+
+    &__btn {
+        min-width: 17.875rem;
+    }
+
+    @media (min-width: $laptop-min) {
+        &__btn {
+            min-width: 12.375rem;
+        }
+
+        &__btn--agree {
+            min-width: 14.125rem;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        &__content {
+            max-width: calc(#{$modal-content-width} * 1.333);
+        }
+
+        &__close {
+            top: calc(-.938rem * 1.333);
+            width: calc(#{$modal-close-size} * 1.333);
+            height: calc(#{$modal-close-size} * 1.333);
+        }
+
+        &__lead {
+            font-size: calc(1.375rem * 1.333);
+            padding-left: calc(1.563rem * 1.333);
+            padding-right: calc(1.563rem * 1.333);
+            margin-bottom: calc(1.65rem * 1.333);
+        }
+
+        &__clipped-block {
+            min-height: calc(17.5rem * 1.333);
+
+            .clipped-block__inner {
+                padding-top: calc(2.9rem * 1.333);
+                padding-bottom: calc(3rem * 1.333);
+            }
+
+            .clipped-block__shape::before {
+                background-color: rgba(90, 83, 140, .4);
+                backdrop-filter: blur(12px);
+            }
+        }
+
+        &__btn {
+            min-width: calc(12.375rem * 1.333);
+        }
+
+        &__btn--agree {
+            min-width: calc(14.125rem * 1.333);
+        }
+    }
+
+    @media (max-width: $mobile-sm) {
+        &__content {
+            max-width: calc(100% - 2.75rem);
+        }
+
+        .fp-modal__clipped-block .clipped-block__inner {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .fp-modal__lead {
+            line-height: 1.18;
+            margin-bottom: 1.5rem;
+        }
+
+        .fp-modal__btns {
+            row-gap: .95rem;
+        }
+    }
+}

@@ -1,0 +1,268 @@
+.navbar--custom {
+    min-height: 4.75rem;
+    background: transparent;
+
+    .navbar__line {
+        background: url(../images/theme-midnight/navbar/navbar-line.png) no-repeat 0 0;
+        position: absolute; top: 0; left: 50%;
+        width: 1440px;
+        height: 100%;
+        transform: translateX(-50%);
+        pointer-events: none;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute; bottom: 0; right: 100%;
+            height: 100%;
+            width: 100vw;
+            background: url(../images/theme-midnight/navbar/navbar-line-x.png) repeat-x 0 0;
+        }
+
+        &::after {
+            right: 0;
+            left: 100%
+        }
+    }
+
+    .navbar__bg,
+    .navbar__bg-inner,
+    .navbar__bg-lines {
+        @include position-absolute-full;
+    }
+
+    .navbar__bg-inner {
+        background-color: rgba(34, 38, 80, .56);
+        backdrop-filter: blur(8px);
+        clip-path: polygon(0 0,
+                100% 0,
+                100% 3.813rem,
+                calc(50% + 4rem) 3.813rem,
+                calc(50% + 4rem - 1.5rem) 100%,
+                calc(50% - 4rem + 1.5rem) 100%,
+                calc(50% - 4rem) 3.813rem,
+                0 3.813rem);
+    }
+
+    .navbar__bg-line-lb,
+    .navbar__bg-line-rb,
+    .navbar__bg-line-l,
+    .navbar__bg-line-r,
+    .navbar__bg-line-b {
+        position: absolute;
+        background-color: #404782;
+    }
+
+    .navbar__bg-line-lb,
+    .navbar__bg-line-rb,
+    .navbar__bg-line-l,
+    .navbar__bg-line-r {
+        top: 3.813rem;
+    }
+
+    .navbar__bg-line-lb,
+    .navbar__bg-line-rb {
+        left: 0;
+        width: calc(50% - 4rem);
+        height: 1px;
+    }
+
+    .navbar__bg-line-rb {
+        left: auto;
+        right: 0;
+    }
+
+    .navbar__bg-line-l,
+    .navbar__bg-line-r {
+        height: 1.8rem;
+        width: 1px;
+        transform-origin: 0 0;
+    }
+
+    .navbar__bg-line-l {
+        left: calc(50% - 4rem - 1px);
+        transform: rotate(-60deg);
+    }
+
+    .navbar__bg-line-r {
+        right: calc(50% - 4rem - 1px);
+        transform: rotate(60deg);
+    }
+
+    .navbar__bg-line-b {
+        bottom: 0;
+        left: 50%;
+        width: 5rem;
+        height: 1px;
+        transform: translateX(-50%);
+    }
+
+    .navbar__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar__logo {
+        width: 2rem;
+        height: 2.875rem;
+    }
+
+    .navbar__hamburger-bg {
+        display: none;
+    }
+
+    .navbar__btn-login {
+        color: $white;
+        padding: .5rem;
+        min-height: 2.5rem;
+        min-width: 6.625rem;
+        font-size: .875rem;
+        border-radius: 2px;
+        clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 1rem 100%, 0 calc(100% - 1rem));
+        margin-right: .6rem;
+        margin-top: -1rem;
+
+        &::before,
+        &::after {
+            content: '';
+            @include position-absolute-full;
+            background: linear-gradient(270deg, #07C9FF -35.82%, #0459F7 83.6%);
+            pointer-events: none;
+            transition: opacity .5s ease;
+        }
+
+        &::after {
+            background: linear-gradient(270deg, #0459F7 -35.82%, #07C9FF 83.6%);
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &:hover::before {
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &:hover::after {
+            z-index: 1;
+            opacity: 1;
+        }
+
+        .btn__text {
+            z-index: 2;
+        }
+    }
+
+    @media (min-width: $laptop-min) {
+        .navbar__hamburger {
+            width: 2.688rem;
+            height: 2.5rem;
+            margin-left: .6rem;
+            margin-top: -1rem;
+        }
+
+        .navbar__hamburger-bg {
+            @include position-absolute-full;
+            display: block;
+        }
+
+        .navbar__hamburger-lines {
+            width: 1.5rem;
+            height: .813rem;
+        }
+
+        .navbar__bg-lines {
+            display: none;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        & {
+            min-height: 3.688rem;
+        }
+
+        .navbar__bg-inner {
+            clip-path: polygon(0 0,
+                    100% 0,
+                    100% 3.188rem,
+                    calc(50% + 2.4rem) 3.188rem,
+                    calc(50% + 2.4rem - 1rem) 100%,
+                    calc(50% - 2.4rem + 1rem) 100%,
+                    calc(50% - 2.4rem) 3.188rem,
+                    0 3.188rem);
+        }
+
+        .navbar__line {
+            display: none;
+        }
+
+        .navbar__bg-line-lb,
+        .navbar__bg-line-rb,
+        .navbar__bg-line-l,
+        .navbar__bg-line-r {
+            top: 3.188rem;
+        }
+
+        .navbar__bg-line-lb,
+        .navbar__bg-line-rb {
+            width: calc(50% - 2.4rem);
+        }
+
+        .navbar__bg-line-l,
+        .navbar__bg-line-r {
+            height: 1.05rem;
+        }
+
+        .navbar__bg-line-l {
+            left: calc(50% - 2.4rem - 1px);
+            transform: rotate(-66deg);
+            top: calc(3.188rem + 1px);
+            height: 1.1rem;
+        }
+
+        .navbar__bg-line-r {
+            right: calc(50% - 2.4rem - 1px);
+            transform: rotate(65deg);
+        }
+
+        .navbar__bg-line-b {
+            width: calc(2.6rem + .2rem);
+        }
+
+        .navbar__hamburger {
+            margin-top: calc((3.688rem - 3.188rem) * -1);
+        }
+
+        .navbar__hamburger-lines {
+            transform: scale(1, -1);
+        }
+
+        .navbar__logo {
+            width: 1.625rem;
+            height: 2.25rem;
+        }
+
+        .navbar__btn-login {
+            min-height: 2.063rem;
+            min-width: 5.063rem;
+            font-size: .75rem;
+            clip-path: polygon(0 0, calc(100% - .75rem) 0, 100% .75rem, 100% 100%, .75rem 100%, 0 calc(100% - .75rem));
+            margin-right: .5rem;
+            margin-top: -.6rem;
+        }
+
+    }
+}
+
+body.is-phone {
+    @media (max-width: 767px) {
+        .navbar--custom {
+            .navbar__bg-line-b {
+                width: 2.9rem;
+            }
+
+            /*.navbar__bg-line-l {
+                top: 3.188rem;
+            }*/
+        }
+    }
+}

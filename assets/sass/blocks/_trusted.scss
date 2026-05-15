@@ -1,0 +1,201 @@
+.trusted {
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+    z-index: 5;
+
+    &__container {
+        max-width: 76.125rem;
+        padding-top: 3.25rem;
+        padding-bottom: 0;
+    }
+
+    &__box {
+        position: relative;
+        padding: 2rem 2rem 2.5rem;
+
+        &::before {
+            content: '';
+            @include position-absolute-full;
+            background: rgba(56, 53, 75, .24);
+            backdrop-filter: blur(3px);
+            border-radius: 2px;
+            clip-path: polygon(100% 0, 100% 100%, 3rem 100%, 0 calc(100% - 3rem), 0 0);
+        }
+    }
+
+    &__title,
+    &__lead,
+    &__logos {
+        position: relative;
+    }
+
+    &__title {
+        font-family: $font-title;
+        font-weight: 400;
+        font-size: 1.75rem;
+        line-height: 1.14;
+        margin-top: 1rem;
+        margin-bottom: 0;
+
+        span {
+            color: $cyan;
+            text-shadow: $title-shadow;
+        }
+    }
+
+    &__lead {
+        color: rgba($white, .8);
+        font-size: .875rem;
+        line-height: 1.5;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: .25rem;
+        margin-top: .5rem;
+        margin-bottom: .7rem;
+    }
+
+    &__logos {
+        @include flex-center-vertical;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 52.938rem;
+        @include horizontal-center;
+        column-gap: 1.625rem;
+    }
+
+    &__logo-img {
+        max-height: 2.5rem;
+    }
+
+    &__lines {
+        @include position-absolute-full;
+        pointer-events: none;
+    }
+
+    &__line {
+        &-1,
+        &-2,
+        &-3,
+        &-4,
+        &-5 {
+            position: absolute;
+            background-color: #33367B;
+        }
+
+        &-1 {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+        }
+
+        &-2 {
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: calc(100% - 3rem);
+            background: linear-gradient(to bottom, rgba(51, 54, 123, 1) 0%, rgba(21, 33, 54, 1) 100%);
+        }
+
+        &-3 {
+            bottom: 0;
+            right: 0;
+            width: calc(100% - 3rem);
+            height: 1px;
+            background-color: rgba(21, 33, 54, 1);
+        }
+
+        &-4 {
+            top: calc(100% - 3rem);
+            left: 0;
+            width: 1px;
+            height: 4.25rem;
+            transform-origin: 0 0;
+            transform: rotate(-45deg);
+            background-color: rgba(21, 33, 54, 1);
+        }
+
+        &-5 {
+            background: linear-gradient(to bottom, rgba(51, 54, 123, 1) 0%, rgba(21, 33, 54, 1) 100%);
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            margin-top: -4.375rem;
+        }
+
+        &__container {
+            max-width: 101.48rem;
+            padding-top: 4rem;
+        }
+
+        &__box {
+            padding: 2.67rem 2.67rem 3.33rem;
+        }
+
+        &__title {
+            font-size: 2.34rem;
+        }
+
+        &__lead {
+            font-size: 1.17rem;
+            letter-spacing: .33rem;
+            margin-top: calc(.5rem * 1.333);
+            margin-bottom: calc(.7rem * 1.333);
+        }
+
+        &__logos {
+            max-width: 70.67rem;
+            column-gap: 2.17rem;
+        }
+
+        &__logo-img {
+            max-height: 3.34rem;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        &__logos {
+            justify-content: center;
+            max-width: 31.25rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        &__container {
+            padding-top: 2.35rem;
+        }
+
+        &__box {
+            max-width: calc(100% - 2rem);
+            width: 100%;
+            @include horizontal-center;
+            padding: 1.1rem 1rem 1.5rem;
+        }
+
+        &__title {
+            color: $cyan;
+            font-size: 1.5rem;
+            line-height: 1.19;
+            text-shadow: $title-shadow;
+        }
+
+        &__lead {
+            margin-top: .45rem;
+            margin-bottom: .65rem;
+        }
+    }
+
+    @media (max-width: $mobile-sm) {
+        &__logos {
+            max-width: 22.5rem;
+            row-gap: 3px;
+        }
+    }
+}

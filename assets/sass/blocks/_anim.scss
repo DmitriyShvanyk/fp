@@ -1,0 +1,8 @@
+[data-aos="zoom-in"] {
+    transform: scale(0);
+
+    &.aos-animate {
+        transform: translateZ(0) scale(1);
+        transition-duration: .2s !important;
+    }
+}

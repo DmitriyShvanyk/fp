@@ -1,0 +1,41 @@
+$sticky-cta-height: 5rem;
+$sticky-cta-z-index: 9;
+$sticky-cta-btn-width: 19.875rem;
+$sticky-cta-btn-height: 3.938rem;
+$sticky-cta-btn-shadow: drop-shadow(0 .25rem 4.819rem $black);
+
+.sticky-cta {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $sticky-cta-height;
+    z-index: $sticky-cta-z-index;
+    transform: translateY(100%);
+    transition: transform .3s ease;
+
+    &__btn {
+        min-width: $sticky-cta-btn-width;
+        min-height: $sticky-cta-btn-height;
+        filter: $sticky-cta-btn-shadow;
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            display: flex;
+        }
+
+        &.is-visible {
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (max-width: $mobile-md) {
+    body:has(.sticky-cta.is-visible) {
+        padding-bottom: $sticky-cta-height;
+    }
+}

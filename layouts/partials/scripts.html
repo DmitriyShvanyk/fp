@@ -1,0 +1,48 @@
+{{ $anime := resources.Get "js/anime/anime.min.js" }}
+{{ $rellax := resources.Get "js/rellax/rellax.min.js" }}
+
+{{ $scripts := resources.Get "js/scripts.js" }}
+{{ $icons := resources.Get "js/iconsLoader.js" }}
+{{ $bg := resources.Get "js/backgroundPreload.js" }}
+
+{{ $opts := dict "minify" true }}
+{{ $js := slice $scripts $icons $bg | resources.Concat "js/main.js" | js.Build $opts | fingerprint | resources.Minify }}
+
+{{ $vendors := slice $anime $rellax | resources.Concat "js/vendors.js" | resources.Minify }}
+
+<!--aos-->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'">
+<script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="{{ $vendors.RelPermalink }}"></script>
+<script src="{{ $js.RelPermalink }}"></script>
+<script>
+    (function() {
+
+        'use strict';
+        
+        function addImageToBlockTreatmentBenefits() {
+            const container = document.querySelector(".treatment-benefits-bg");
+            if (container) {
+                const img = document.createElement("img");
+                
+                const isNeonPulse = document.body.classList.contains("theme-neon-pulse");
+                img.src = isNeonPulse 
+                    ? "/images/theme-neon-pulse/treatment-benefits/bg-lines.png"
+                    : "/images/home/treatment-benefits/bg-lines.png";
+                
+                img.classList.add("treatment-benefits-lines");
+                img.loading = "lazy";
+                img.alt = "";
+
+                container.appendChild(img);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', ()=> {
+            setTimeout(() => {
+                addImageToBlockTreatmentBenefits();
+            }, 2000);
+        });
+    })();
+</script>

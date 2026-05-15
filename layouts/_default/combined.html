@@ -1,0 +1,55 @@
+{{ define "main" }}
+    <header class="header header--legal-info header--privacy-policy relative">
+        <div class="container relative header__container">
+            <h1 class="header__title text-center">{{ page.Title }}</h1>
+        </div>
+        <picture class="header__bg">
+            <source media="(min-width: 992px)" srcset="/images/terms-of-use/header/header-bg-min.png">
+            <source media="(max-width: 991px)" srcset="/images/terms-of-use/header/header-bg-m-min.png">
+            <img class="header__bg-img" src="/images/terms-of-use/header/header-bg-m-min.png" alt="">
+        </picture>
+    </header>
+    <!--main.begin-->
+    <main>
+
+        <!--section-combined.begin-->
+        <div class="section-combined section-combined--legal-info">
+
+            <!--legal-info.begin-->
+            <section class="legal-info">
+                <div class="container relative legal-info__container">
+
+                    <!--clipped-block.begin-->
+                    <div class="clipped-block legal-info__clipped-block">
+                        <div class="clipped-block__inner">
+
+                            <div class="article">
+                                {{ .Content }}
+                            </div>
+                        </div>
+                        <div class="clipped-block__shape"></div>
+                        <div class="clipped-block__lines">
+                            <span class="clipped-block__line-1"></span>
+                            <span class="clipped-block__line-2"></span>
+                            <span class="clipped-block__line-3"></span>
+                            <span class="clipped-block__line-4"></span>
+                            <span class="clipped-block__line-5"></span>
+                            <span class="clipped-block__line-6"></span>
+                        </div>
+                    </div>
+                    <!--clipped-block.end-->
+
+                </div>
+            </section>
+            <!--legal-info.end-->
+
+            <div class="section-combined__bg-lines"></div>
+            <img class="section-combined__shape-1" src="/images/bg/shape-1.svg" loading="lazy" alt="">
+            <img class="section-combined__shape-2" src="/images/bg/shape-2.svg" loading="lazy" alt="">
+        </div>
+        <!--section-combined.end-->
+
+
+    </main>
+    <!--main.end-->
+{{ end }}

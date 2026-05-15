@@ -1,0 +1,126 @@
+{{ define "main" }}
+
+
+    <header class="header header--mission relative text-center">
+        <div class="container relative header__container">
+            <h1 class="header__title" data-aos="fade-up">
+                <span class="block">Our Mission:</span>
+                Making ED Treatment Simple, Affordable, and Accessible
+            </h1>
+            <p class="header__lead" data-aos="fade-up" data-aos-delay="50">We believe that premium ED treatment should be simple, affordable, and discreet. At Friday Plans, we make it easy&nbsp;for every man to access effective ED&nbsp;medication—without the hassle or high&nbsp;cost.</p>
+
+            <div class="problem">
+                <h2 class="title problem__title" data-aos="fade-up" data-aos-delay="100">The Problem</h2>
+
+                <div class="problem__items">
+                    <div class="problem__item" data-aos="fade-up" data-aos-delay="150">
+                        <p class="problem__caption">52% of men experience&nbsp;ED<sup>[1]</sup></p>
+                        <div class="problem__pict problem__pict--counter">
+                            <div class="problem__circle">
+                                <span class="problem__circle-inner-1"></span>
+                                <span class="problem__circle-inner-2"></span>
+                                <span class="problem__circle-inner-3"></span>
+                                <img class="problem__circle-lines" src="/images/problem/counter.svg" alt="">
+                                <div class="problem__circle-text">52%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="problem__item" data-aos="fade-up" data-aos-delay="200">
+                        <p class="problem__caption">3 in 4 don’t get&nbsp;treated<sup>[2]</sup></p>
+                        <div class="problem__pict problem__pict--peoples">
+                            <div class="problem__circle">
+                                <img class="problem__circle-peoples" src="/images/problem/peoples.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <picture class="header__bg">
+            <source media="(min-width: 992px)" srcset="/images/mission/header/header-bg-min.png">
+            <source media="(max-width: 991px)" srcset="/images/mission/header/header-bg-m-min.png">
+            <img class="header__bg-img" src="/images/mission/header/header-bg-m-min.png" alt="">
+        </picture>
+    </header>
+
+    <!--main.begin-->
+    <main>
+
+        <!--section-combined.begin-->
+        <div class="section-combined section-combined--mission">
+
+            <!--benefits.begin-->
+            <section class="benefits benefits--mission">
+                <div class="container relative benefits__container">
+                    <h2 class="title benefits__title" data-aos="fade-up">
+                        <span class="block title__highlighted">How Friday Plans&nbsp;is Solving&nbsp;That</span>
+                    </h2>
+                    <div class="benefits__items">
+                        <div class="benefits__item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="benefits__card">
+                                <div class="icon-custom benefits__icon">
+                                    <div class="icon-custom__arc"></div>
+                                    <svg class="icon-custom__svg-circle">
+                                        <use xlink:href="#benefits-svg-icon-circle"></use>
+                                    </svg>
+                                    <div class="icon-custom__circle" id="i-unbeatable-price" data-svg="/images/icons/i-unbeatable-price.svg"></div>
+                                </div>
+                                <h3 class="benefits__subtitle">Affordable<br> Pricing</h3>
+                                <p class="benefits__lead">All strengths, just $1.99&nbsp;per dose, discreetly shipped to your&nbsp;door.</p>
+                            </div>
+                        </div>
+                        <div class="benefits__item" data-aos="fade-up" data-aos-delay="150">
+                            <div class="benefits__card">
+                                <div class="icon-custom benefits__icon">
+                                    <div class="icon-custom__arc"></div>
+                                    <svg class="icon-custom__svg-circle">
+                                        <use xlink:href="#benefits-svg-icon-circle"></use>
+                                    </svg>
+                                    <div class="icon-custom__circle" id="i-quick-online-consultation" data-svg="/images/icons/i-quick-online-consultation.svg"></div>
+                                </div>
+                                <h3 class="benefits__subtitle">Quick Online Consultation</h3>
+                                <p class="benefits__lead">Answer a few simple questions—no need for&nbsp;doctor visits.</p>
+                            </div>
+                        </div>
+                        <div class="benefits__item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="benefits__card">
+                                <div class="icon-custom icon-custom--fda benefits__icon">
+                                    <div class="icon-custom__arc"></div>
+                                    <svg class="icon-custom__svg-circle">
+                                        <use xlink:href="#benefits-svg-icon-circle"></use>
+                                    </svg>
+                                    <div class="icon-custom__circle" id="i-fda" data-svg="/images/icons/i-fda.svg"></div>
+                                    <div class="icon-custom__circle-2">
+                                        <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.5 3.79919L4.16721 7.16408L10.6672 0.664062" stroke="#57FFFF" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="benefits__subtitle">FDA-Approved Medication</h3>
+                                <p class="benefits__lead">Get genuine Sildenafil and&nbsp;Tadalafil, approved for&nbsp;safety&nbsp;and quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {{ .Content }}
+
+            <div class="section-combined__bg-lines"></div>
+            <div class="section-combined__shape"></div>
+        </div>
+
+    </main>
+
+{{ end }}
+{{ define "scripts" }}
+<link rel="stylesheet" href="/vendor/swiper/swiper-bundle.min.css">
+<script defer src="/vendor/swiper/swiper-bundle.min.js"></script>
+
+{{ $swiper := resources.Get "js/mattersSwiper.js" }}
+{{ $counter := resources.Get "js/counter.js" }}
+{{ $opts := dict "minify" true }}
+{{ $js := slice $swiper $counter | resources.Concat "js/mission.js" | js.Build $opts | fingerprint | resources.Minify }}
+<script src="{{ $js.RelPermalink }}"></script>
+
+{{ end }}

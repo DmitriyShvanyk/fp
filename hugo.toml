@@ -1,0 +1,21 @@
+baseURL = 'https://fridayplans.com/'
+defaultContentLanguage = 'en'
+title = 'Friday Plans | ED Treatment Made Simple'
+disableHugoGeneratorInject = true
+[sitemap]
+    changeFreq = ""
+    disable = false
+    filename = "sitemap.xml"
+    priority = -1
+disableKinds = ['taxonomy', 'term']
+[module]
+  [module.hugoVersion]
+    min = '0.161.1'
+
+[languages]
+  [languages.en]
+    locale = 'en'
+
+[params]
+    taxonomiesExcludedFromSitemap = ["tags", "categories"]
+    description = 'Friday Plans | ED Treatment Made Simple Get FDA-approved Generic Viagra® or Cialis® for as low as $1.99 per tablet (any dosage, including 100 mg). Quick, discreet online prescription in under 2 minutes. Free shipping included!'

@@ -1,0 +1,20 @@
+{{ define "main" }}
+    {{ .Content }}
+{{ end }}
+
+{{ define "scripts" }}
+{{ $js := resources.Get "js/modal.js" | js.Build | fingerprint | resources.Minify }}
+<script src="{{ $js.RelPermalink }}"></script>
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=0e483b92-c01f-4cbc-a844-ad5775fe5844"> </script>
+<script type="text/javascript">
+    zE('messenger', 'hide');
+
+    function showchat() {
+        zE('messenger', 'show'); zE('messenger', 'open');
+    }
+
+    if(window.location.hash === '#start') {
+        document.querySelector('#modalAgree').classList.add('is-active');
+    }
+</script>
+{{ end }}

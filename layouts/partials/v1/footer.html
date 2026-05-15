@@ -1,0 +1,60 @@
+<footer class="footer footer--custom" id="safety">
+    <div class="footer__ellipse"></div>    
+    <div class="container relative footer__container">
+        <div class="footer__head">
+            <h2 class="title footer__title">Important Safety Information</h2>
+            <button class="footer__btn-more">Read Now</button>
+        </div>
+        <div class="footer__body">
+
+            <!--safety.begin-->
+            <div class="safety footer__safety"></div>
+            <!--safety.end-->
+
+            <p class="footer__ps">* Prescription products require an online consultation with a medical provider who will determine if a prescription is appropriate.</p>
+            <div class="footer__logos">
+                {{ $image1 := resources.Get "images/theme-neon-pulse/footer/logo1.png" }}
+                {{ $image2 := resources.Get "images/theme-neon-pulse/footer/logo2.png" }}
+                {{ $image3 := resources.Get "images/theme-neon-pulse/footer/logo3.png" }}
+                {{ with $image1 }}
+                <a href="https://www.legitscript.com/websites/?checker_keywords=fridayplans.com" class="footer__logos-link" target="_blank" title="Verify LegitScript Approval for www.fridayplans.com">
+                    <img class="footer__logos-img" src="{{ .RelPermalink }}" alt="Verify LegitScript Approval for www.fridayplans.com">
+                </a>
+                {{ end }}
+                {{ with $image2 }}
+                <img class="footer__logos-img footer__logos-img--sure-scripts" src="{{ .RelPermalink }}" alt="Sure Scripts compliant: national e-prescription network">
+                {{ end }}
+
+                {{ with $image3 }}
+                <img class="footer__logos-img footer__logos-img--norton" src="{{ .RelPermalink }}" alt="Norton secured: powered by digicert">
+                {{ end }}
+            </div>
+            <div class="footer__bit">
+                <svg class="footer__bit-icon">
+                    <use xlink:href="#icon-bit"></use>
+                </svg>
+                <span class="footer__bit-span">256-BIT TLS SECURITY</span>
+            </div>
+            <ul class="footer__menu">
+                <li class="footer__menu-item">
+                    <a href="/terms-of-use/" class="footer__menu-link">Terms of Use</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/privacy-policy/" class="footer__menu-link">Privacy Policy</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/consent-to-telehealth/" class="footer__menu-link">Consent to Telehealth</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/physician-code-of-conduct/" class="footer__menu-link">Physician Code of Conduct</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/how-to-cancel/" class="footer__menu-link">Cancel Subscription</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__foot">
+            <p class="footer__copyright">© Friday Plans, Inc. <span class="js-years"></span></p>
+        </div>
+    </div>
+</footer>

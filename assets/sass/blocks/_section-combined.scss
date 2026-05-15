@@ -1,0 +1,285 @@
+.section-combined {
+    position: relative;
+    padding-bottom: 6.6rem;
+
+    &__bg-lines,
+    &__shape,
+    &__shape-1,
+    &__shape-2 {
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &__bg-lines {
+        top: -27%;
+        left: 0;
+        @include full-size;
+        background: url(../images/bg/bg-lines.png) no-repeat center top;
+        background-size: 100% 100%;
+    }
+
+    &__shape {
+        width: 1904px;
+        height: 1339px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, 0.32) 0%, rgba(114, 36, 150, 0) 100%);
+        filter: blur(8px);
+        z-index: -1;
+    }
+
+    &__shape-1 {
+        bottom: -22%;
+        left: 0;
+    }
+
+    &__shape-2 {
+        top: -13%;
+        right: 0;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            padding-bottom: 8.81rem;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        & {
+            padding-bottom: .7rem;
+        }
+
+        &__shape {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0) rotate(90deg);
+        }
+    }
+}
+
+
+.section-combined--shipping {
+    padding-bottom: 2.3rem;
+
+    @media (max-width: $tablet) {
+        & {
+            padding-bottom: 0;
+        }
+    }
+}
+
+
+.section-combined--cancel {
+    margin-top: -10rem;
+    padding-bottom: 5rem;
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            margin-top: -13.35rem;
+            padding-bottom: 6.67rem;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        & {
+            margin-top: -3.7rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            padding-bottom: 1.9rem;
+        }
+    }
+}
+
+
+.section-combined--legal-info {
+    overflow: hidden;
+    margin-top: -9.5rem;
+    padding-bottom: 5.6rem;
+
+    .section-combined__bg-lines {
+        top: 0;
+        height: 1100px;
+    }
+
+    .section-combined__bg-lines-2 {
+        top: auto;
+        bottom: 10%;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            margin-top: calc(-9.5rem * 1.333);
+            padding-bottom: calc(5.6rem * 1.333);
+        }
+    }
+
+    @media (max-width: $tablet) {
+        & {
+            margin-top: -17rem;
+        }
+
+        .section-combined__bg-lines {
+            display: none;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            margin-top: -18.5rem;
+            padding-bottom: .7rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        & {
+            margin-top: -21.7rem;
+        }
+    }
+
+    @media (max-width: 375px) {
+        & {
+            margin-top: -20rem;
+        }
+    }
+}
+
+
+.section-combined--contact-us {
+    margin-top: -11.55rem;
+    padding-bottom: 6rem;
+
+    &::before {
+        display: none;
+    }
+
+    .section-combined__shape-2 {
+        top: auto;
+        bottom: -10%;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            margin-top: calc(-11.55rem * 1.333);
+            padding-bottom: calc(6rem * 1.333);
+        }
+    }
+
+    @media (max-width: $tablet) {
+        & {
+            margin-top: -12.2rem;
+        }
+
+        .cancel__container {
+            padding-inline: 1.5rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            padding-bottom: 2.1rem;
+        }
+    }
+}
+
+
+.section-combined--charity {
+    padding-bottom: 6rem;
+
+    @media (max-width: $tablet) {
+        & {
+            padding-bottom: .7rem;
+        }
+    }
+}
+
+
+.section-combined--mission {
+    @media (max-width: $mobile-md) {
+        &::before {
+            content: '';
+            position: absolute;
+            top: -18.5%;
+            left: 0;
+            @include full-size;
+            background-image: url(../images/bg/bg-lines-mobile.png);
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            pointer-events: none;
+        }
+    }
+}
+
+
+.section-combined--pricing {
+    background-image: none;
+
+    .section-combined__bg-lines {
+        top: -5%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/pricing/section-combined/line-bg.png);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+        z-index: -1;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 1%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    @media (min-width: $large-desktop-min) {
+        .section-combined__bg-lines {
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 1%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+
+    @media (max-width: $tablet) {
+        .section-combined__shape {
+            top: 10%;
+            width: 1167px;
+            height: 1339px;
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .section-combined__bg-lines {
+            top: -10%;
+            background-image: url(../images/pricing/section-combined/line-bg-m.png);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 1%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+}
+
+
+.section-combined--privacy {
+    .section-combined__shape {
+        height: 1084px;
+        top: 65%;
+    }
+
+    @media (max-width: $mobile-md) {
+        .section-combined__shape {
+            width: 1771px;
+            height: 1217px;
+            top: -10%;
+            transform: translateY(0) translateX(-50%) rotate(90deg);
+        }
+    }
+}
+
+
+.section-combined--shipping,
+.section-combined--charity {
+    @media (max-width: $mobile-md) {
+        & {
+            background-image: url(../images/bg/bg-lines-mobile.png);
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    }
+}

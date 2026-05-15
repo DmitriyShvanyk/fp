@@ -1,0 +1,127 @@
+.article {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 300;
+
+    &__title {
+        font-size: 1.25rem;
+        line-height: 1.25;
+        margin-top: 0;
+    }
+
+    &__text+&__title {
+        margin-top: 2rem;
+    }
+
+    &__text {
+        line-height: 1.3;
+        margin-top: 0;
+        margin-bottom: 1.35rem;
+
+        &--sm {
+            font-size: 1.125rem;
+        }
+
+        &--md {
+            font-size: 1.25rem;
+        }
+
+        &--over-list {
+            margin-bottom: .6rem;
+        }
+    }
+
+    &__break-all {
+        word-break: break-all;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration-thickness: 1px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        @include reset-list;
+    }
+
+    &__list-item {
+        padding-left: 1.6rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: .6rem;
+            left: .75rem;
+            width: 2px;
+            height: 2px;
+            background-color: $gray-light;
+            border-radius: 50%;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            font-size: 1.335rem;
+        }
+
+        &__title {
+            font-size: 1.67rem;
+        }
+
+        &__text+&__title {
+            margin-top: 2.67rem;
+        }
+
+        &__text {
+            margin-bottom: 1.8rem;
+
+            &--sm {
+                font-size: 1.5rem;
+            }
+
+            &--md {
+                font-size: 1.67rem;
+            }
+
+            &--over-list {
+                margin-bottom: .8rem;
+            }
+        }
+
+        &__list-item {
+            padding-left: 2.14rem;
+
+            &::before {
+                top: .8rem;
+                left: 1rem;
+                width: .17rem;
+                height: .17rem;
+            }
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        &__text {
+            margin-bottom: 1.55rem;
+
+            &--md {
+                line-height: 1.25;
+            }
+
+            &--over-list {
+                margin-bottom: .55rem;
+            }
+        }
+
+        &__text+&__title {
+            margin-top: 1.55rem;
+        }
+    }
+}

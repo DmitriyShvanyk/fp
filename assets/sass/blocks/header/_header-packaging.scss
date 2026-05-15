@@ -1,0 +1,36 @@
+.header--packaging {
+    min-height: 1rem;
+
+    &::before,
+    &::after {
+        display: none;
+    }
+
+    .header__container {
+        padding-top: 7.5rem;
+        padding-bottom: 2.6rem;
+        z-index: 1;
+    }
+
+    .header__title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    @media (max-width: $tablet) {
+        .header__container {
+            padding-top: 2.1rem;
+            padding-bottom: 1px;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        .header__video-container {
+            max-height: 500px;
+        }
+
+        .header__title {
+            margin-bottom: 4rem;
+        }
+    }
+}

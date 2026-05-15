@@ -1,0 +1,89 @@
+.header--legal-info {
+    min-height: 29.125rem;
+
+    &::before,
+    &::after {
+        display: none;
+    }
+
+    .header__container {
+        padding-top: 8.5rem;
+    }
+
+    .header__title {
+        font-size: 2.75rem;
+        margin-top: 2.45rem;
+    }
+
+    .header__bg {
+        top: 11%;
+    }
+
+    @media (min-width: $laptop-min) {
+        .header__title {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            min-height: 38.88rem;
+        }
+
+        .header__container {
+            padding-top: calc(8.5rem * 1.333);
+        }
+
+        .header__title {
+            font-size: 3.67rem;
+            margin-top: 3.27rem;
+        }
+
+        .header__bg {
+            top: 8%;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        .header__container {
+            padding-top: 5.75rem;
+        }
+
+        .header__title {
+            font-size: 2.125rem;
+            margin-top: 1rem;
+            padding-inline: .5rem;
+        }
+    }
+}
+
+
+.header--privacy-policy,
+.header--privacy-physician-code {
+    @media (min-width: 376px) and (max-width: 991px) {
+        .header__title {
+            margin-top: 0;
+        }
+    }
+}
+
+
+.header--privacy-physician-code {
+    .header__title {
+        padding-inline: 0;
+    }
+
+    @media (max-width: 375px) {
+        .header__container {
+            padding-bottom: 19.5rem;
+        }
+
+        .header__title {
+            br {
+                display: none;
+            }
+        }
+    }
+}

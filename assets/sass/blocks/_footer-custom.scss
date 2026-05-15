@@ -1,0 +1,134 @@
+.footer--custom {
+    overflow-x: unset;
+
+    &,
+    &::before {
+        background: transparent;
+    }
+
+    &::after {
+        display: none;
+    }
+
+    .footer__line {
+        display: block;
+        height: 1.375rem;
+        max-width: 61.25rem;
+        width: 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-image: url(../images/theme-midnight/footer/footer-line-d.svg);
+        @include horizontal-center;
+        background-size: contain;
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer__container {
+        padding-top: 4.5rem;
+    }
+
+    .footer__ps {
+        margin-top: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer__title {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer__logos {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer__bit {
+        margin-bottom: 3.1rem;
+    }
+
+    .footer__body {
+        padding-bottom: .75rem;
+    }
+
+    .footer__foot {
+        padding-top: 0;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .footer__copyright {
+        color: rgba($white, .24);
+    }
+
+    .footer__ellipse {
+        position: absolute;
+        top: 0;
+        right: -20%;
+        width: 894px;
+        height: 622px;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, 0.24) 0%, rgba(114, 36, 150, 0) 100%);
+        filter: blur(8px);
+        pointer-events: none;
+        transform: translateY(-30%);
+        z-index: 1;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        .footer__line {
+            height: 1.83rem;
+            max-width: 81.64rem;
+        }
+
+        .footer__container {
+            padding-top: 6rem;
+        }
+
+        .footer__ps {
+            margin-top: 1.67rem;
+        }
+
+        .footer__ps,
+        .footer__title,
+        .footer__logos {
+            margin-bottom: 2rem;
+        }
+
+        .footer__bit {
+            margin-bottom: 4.13rem;
+        }
+
+        .footer__body {
+            padding-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        .footer__container {
+            padding-top: 2.25rem;
+        }
+
+        .footer__line {
+            height: 1.063rem;
+            max-width: 23rem;
+            background-image: url(../images/theme-midnight/footer/footer-line-m.svg);
+        }
+
+        .footer__title {
+            padding-inline: 2rem;
+        }
+
+        .footer__menu {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .footer__bit {
+            margin-bottom: 2rem;
+        }
+
+        .footer__ellipse {
+            display: none;
+        }
+    }
+}

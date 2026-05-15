@@ -1,0 +1,43 @@
+.header--shipping {
+    min-height: 1rem;
+
+    &::before,
+    &::after {
+        display: none;
+    }
+
+    .header__container {
+        padding-top: 11rem;
+        padding-bottom: .1rem;
+        z-index: 1;
+    }
+
+    .header__title {
+        text-align: center;
+        margin-bottom: 5.5rem;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        .header__title {
+            margin-bottom: calc(5.5rem * 1.333);
+        }
+    }
+
+    @media (max-width: $tablet) {
+        .header__container {
+            padding-top: 5.3rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        .header__title {
+            margin-bottom: 4rem;
+        }
+
+        .header__bg {
+            top: 4%;
+            height: 75%;
+        }
+    }
+}

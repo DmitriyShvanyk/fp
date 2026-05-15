@@ -1,0 +1,11 @@
+{{ define "main" }}
+    {{ partial "home/header.html" .}}
+    {{ partial "home/trusted.html" .}}
+
+    <div class="treatment-benefits-bg">
+        {{ partial "home/treatment.html" .}}
+        {{ partial "home/benefits.html" .}}
+    </div>
+
+    {{ .Content }}
+{{ end }}

@@ -1,0 +1,300 @@
+$icon-size: 5.25rem;
+$icon-size-lg: round($icon-size * 1.333333333);
+
+.icon {
+    width: $icon-size;
+    height: $icon-size;
+    @include horizontal-center;
+    margin-bottom: 1.65rem;
+    position: relative;
+
+    svg {
+        @include full-size;
+        opacity: 0;
+        transition: opacity .5s ease .7s;
+        will-change: opacity;
+    }
+
+    &.is-loaded {
+        svg {
+            opacity: 1;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            width: $icon-size-lg;
+            height: $icon-size-lg;
+            margin-bottom: 2.2rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            margin-bottom: 1.125rem;
+        }
+    }
+}
+
+
+
+.icon-custom {
+    width: 5.75rem;
+    height: 5.75rem;
+    @include horizontal-center;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    &__svg-circle {
+        @include full-size;
+    }
+
+    &__arc {
+        position: absolute;
+        top: -2.6rem;
+        left: 0;
+        width: 4.75rem;
+        height: 4.688rem;
+        pointer-events: none;
+        background: linear-gradient(219.21deg, #FFFFFF -6.89%, rgba(255, 255, 255, 0) 64.61%);
+        mix-blend-mode: normal;
+        opacity: .24;
+        transform: rotate(50deg);
+    }
+
+    &__circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 3.75rem;
+        height: 3.75rem;
+        border: 1px solid #00FFFF;
+        background: linear-gradient(161.08deg, rgba(0, 255, 255, 0.32) 9.64%, rgba(0, 255, 255, 0.1504) 100.66%);
+        backdrop-filter: blur(2px);
+        border-radius: 50%;
+        overflow: hidden;
+
+        svg {
+            opacity: 0;
+            transition: opacity .5s ease .7s;
+            will-change: opacity;
+        }
+
+        &.is-loaded {
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+
+    &--fda {
+        .icon-custom__circle {
+            width: 3.25rem;
+            height: 3.25rem;
+        }
+
+        .icon-custom__circle-2 {
+            position: absolute;
+            bottom: .9rem;
+            left: 50%;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 1px solid #00FFFF;
+            background: linear-gradient(161.08deg, rgba(0, 255, 255, 0.32) 9.64%, rgba(0, 255, 255, 0.1504) 100.66%);
+            backdrop-filter: blur(2px);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    #i-support {
+        svg {
+            margin-left: -.25rem;
+            margin-bottom: -.25rem;
+        }
+    }
+
+    #i-create-jobs {
+        svg {
+            position: relative;
+            left: -.15rem;
+        }
+    }
+
+    #i-bank-level-security {
+        svg {
+            position: relative;
+            left: .15rem;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            width: calc(5.75rem * 1.333);
+            height: calc(5.75rem * 1.333);
+            margin-bottom: calc(1rem * 1.333);
+        }
+
+        &__arc {
+            width: calc(4.75rem * 1.333);
+            height: calc(4.688rem * 1.333);
+        }
+
+        &__circle {
+            width: calc(3.75rem * 1.333);
+            height: calc(3.75rem * 1.333);
+        }
+
+        &--fda {
+            .icon-custom__circle {
+                width: calc(3.25rem * 1.333);
+                height: calc(3.25rem * 1.333);
+            }
+
+            .icon-custom__circle-2 {
+                bottom: calc(.9rem * 1.333);
+                width: calc(1.25rem * 1.333);
+                height: calc(1.25rem * 1.333);
+            }
+        }
+
+        #i-unbeatable-price {
+            svg {
+                width: calc(2.75rem * 1.333);
+                height: calc(2.75rem * 1.333);
+            }
+        }
+
+        #i-discreet-packaging {
+            svg {
+                width: calc(2.25rem * 1.333);
+                height: calc(2rem * 1.333);
+            }
+        }
+
+        #i-licensed-online-pharmacy {
+            svg {
+                width: calc(1.875rem * 1.333);
+                height: calc(2.313rem * 1.333);
+            }
+        }
+
+        #i-us-doctors-pharmacies {
+            svg {
+                width: calc(2.813rem * 1.333);
+                height: calc(2.813rem * 1.333);
+            }
+        }
+
+        #i-free-shipping {
+            svg {
+                width: calc(2.313rem * 1.333);
+                height: calc(1.688rem * 1.333);
+            }
+        }
+
+        #i-money-back-guarantee {
+            svg {
+                width: calc(2.5rem * 1.333);
+                height: calc(2.438rem * 1.333);
+            }
+        }
+
+        #i-quick-online-consultation {
+            svg {
+                width: calc(2rem * 1.333);
+                height: calc(2.75rem * 1.333);
+            }
+        }
+
+        #i-no-inperson-doctor-visits {
+            svg {
+                width: calc(2.125rem * 1.333);
+                height: calc(2.188rem * 1.333);
+            }
+        }
+
+        #i-fda {
+            svg {
+                width: calc(2.188rem * 1.333);
+                height: calc(1rem * 1.333);
+            }
+
+            & + .icon-custom__circle-2 {
+                svg {
+                    width: calc(.75rem * 1.333);
+                    height: calc(.563rem * 1.333);
+                }
+            }
+        }
+
+        #i-support {
+            svg {
+                width: calc(2.313rem * 1.333);
+                height: calc(2.313rem * 1.333);
+                margin-left: calc(-.25rem * 1.333);
+                margin-bottom: calc(-.25rem * 1.333);
+            }
+        }
+
+        #i-restore-ecosystems {
+            svg {
+                width: calc(2.563rem * 1.333);
+                height: calc(2.563rem * 1.333);
+            }
+        }
+
+        #i-combat-climate-change {
+            svg {
+                width: calc(2.375rem * 1.333);
+                height: calc(2.313rem * 1.333);
+            }
+        }
+
+        #i-create-jobs {
+            svg {
+                width: calc(2.438rem * 1.333);
+                height: calc(2.5rem * 1.333);
+                left: calc(-.15rem * 1.333);
+            }
+        }
+
+        #i-privacy-commitment {
+            svg {
+                width: calc(2.25rem * 1.333);
+                height: calc(2rem * 1.333);
+            }
+        }
+
+        #i-bank-level-security {
+            svg {
+                width: calc(2.188rem * 1.333);
+                height: calc(2.25rem * 1.333);
+                left: calc(.15rem * 1.333);
+            }
+        }
+
+        #i-complete-confidentiality {
+            svg {
+                width: calc(2rem * 1.333);
+                height: calc(2.375rem * 1.333);
+            }
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            margin-bottom: 1.125rem;
+        }
+    }
+}

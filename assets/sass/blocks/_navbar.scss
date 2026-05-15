@@ -1,0 +1,283 @@
+$navbar-bg: transparent;
+$navbar-z-index: 99;
+$navbar-container-width: 107.5rem;
+
+.navbar {
+    min-height: $navbar-height;
+    background: $navbar-bg;
+    display: flex;
+    @include fixed-top-left;
+    width: 100%;
+    z-index: $navbar-z-index;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        padding: 0;
+        max-width: $navbar-container-width;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__col {
+        display: flex;
+
+        &:nth-child(2) {
+            justify-content: center;
+        }
+
+        &:nth-child(3) {
+            justify-content: flex-end;
+        }
+    }
+
+    &__hamburger {
+        @include flex-center;
+        width: 3.125rem;
+        height: 3.125rem;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        position: relative;
+        margin-left: .2rem;
+
+        &-circle,
+        &-lines,
+        &-close,
+        &-bg {
+            pointer-events: none;
+        }
+
+        &-circle {
+            display: block;
+            @include centerer;
+            width: 2.375rem;
+            height: 2.375rem;
+            background-color: rgba($cyan, .16);
+            filter: blur(11.6px);
+            transition: background-color .3s ease;
+        }
+
+        &-lines {
+            position: relative;
+        }
+
+        &-close {
+            width: 1.375rem;
+            height: 1.375rem;
+            display: none;
+        }
+
+        &-bg {
+            display: none;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            .navbar__hamburger-circle {
+                background-color: rgba($cyan, .32);
+            }
+        }
+
+        &.is-active {
+            .navbar__hamburger-lines {
+                display: none;
+            }
+
+            .navbar__hamburger-close {
+                display: block;
+            }
+        }
+    }
+
+    &__btn-login {
+        color: $white;
+        padding: .5rem;
+        min-height: 2.5rem;
+        min-width: 6.625rem;
+        font-size: .875rem;
+        border-radius: 2px;
+        clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 1rem 100%, 0 calc(100% - 1rem));
+        margin-right: .6rem;
+        margin-top: -1rem;
+
+        &::before,
+        &::after {
+            content: '';
+            @include position-absolute-full;
+            background: linear-gradient(270deg, #07C9FF -35.82%, #0459F7 83.6%);
+            pointer-events: none;
+            transition: opacity .5s ease;
+        }
+
+        &::after {
+            background: linear-gradient(270deg, #0459F7 -35.82%, #07C9FF 83.6%);
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &:hover::before {
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &:hover::after {
+            z-index: 1;
+            opacity: 1;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $white;
+        }
+
+        .btn__text {
+            z-index: 2;
+        }
+    }
+
+    &__shape-line {
+        background-image: url(../images/navbar/navbar-line.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 1440px;
+        height: 100%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        background-size: contain;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 100%;
+            height: 100%;
+            width: 100vw;
+            background-image: url(../images/navbar/navbar-line-x.png);
+            background-position: 0 0;
+            background-repeat: repeat-x;
+            background-size: 100% 100%;
+        }
+
+        &::after {
+            right: 0;
+            left: 100%
+        }
+    }
+
+    &__bg {
+        &,
+        &-inner {
+            @include position-absolute-full;
+        }
+
+        &-inner {
+            background-color: rgba(34, 38, 80, .56);
+            backdrop-filter: blur(.5rem);
+            clip-path: polygon(0 0,
+                    100% 0,
+                    100% 3.813rem,
+                    calc(50% + 4rem) 3.813rem,
+                    calc(50% + 4rem - 1.5rem) 100%,
+                    calc(50% - 4rem + 1.5rem) 100%,
+                    calc(50% - 4rem) 3.813rem,
+                    0 3.813rem);
+        }
+    }
+
+    @media (min-width: $laptop-min) {
+        &__hamburger {
+            width: 2.688rem;
+            height: 2.5rem;
+            margin-left: .6rem;
+            margin-top: -1rem;
+        }
+
+        &__hamburger-bg {
+            @include position-absolute-full;
+        }
+
+        &__hamburger-lines {
+            width: 1.5rem;
+            height: .813rem;
+        }
+
+        &__bg-lines {
+            display: none;
+        }
+
+        &__hamburger-bg {
+            display: block;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        &__container {
+            max-width: calc(#{$navbar-container-width} * 1.333);
+        }
+    }
+
+    @media (max-width: $tablet) {
+        & {
+            min-height: $navbar-height-mobile;
+        }
+
+        &__hamburger {
+            margin-top: calc((3.688rem - 3.188rem) * -1);
+
+            &-lines {
+                transform: scale(1, -1);
+            }
+        }
+
+        &__btn-login {
+            min-height: 2.063rem;
+            min-width: 5.063rem;
+            font-size: .75rem;
+            clip-path: polygon(0 0, calc(100% - .75rem) 0, 100% .75rem, 100% 100%, .75rem 100%, 0 calc(100% - .75rem));
+            margin-right: .5rem;
+            margin-top: -.6rem;
+        }
+
+        &__bg {
+            &-inner {
+                clip-path: polygon(0 0,
+                        100% 0,
+                        100% 3.188rem,
+                        calc(50% + 2.4rem) 3.188rem,
+                        calc(50% + 2.4rem - 1rem) 100%,
+                        calc(50% - 2.4rem + 1rem) 100%,
+                        calc(50% - 2.4rem) 3.188rem,
+                        0 3.188rem);
+            }
+        }
+
+        &__shape-line {
+            background-image: url(../images/navbar/navbar-line-m.png);
+            width: 404px;
+
+            &::before,
+            &::after {
+                background-image: url(../images/navbar/navbar-line-m-x.png);
+            }
+        }
+    }
+}
+
+body.is-phone {
+    @media (max-width: 767px) {
+        .navbar {
+            .navbar__bg-line-b {
+                width: 2.9rem;
+            }
+        }
+    }
+}

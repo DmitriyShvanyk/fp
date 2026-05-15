@@ -1,0 +1,26 @@
+{{ define "menu" }}{{ end }}
+
+{{ define "navbar" }}
+   {{ partial "v1/navbar.html" . }} 
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "v1/home/header.html" . }}
+    {{ partial "v1/home/trusted.html" . }}
+
+    <div class="treatment-benefits-bg">
+        {{ partial "v1/home/treatment.html" . }}
+        {{ partial "v1/home/benefits.html" . }}
+    </div>
+
+    {{ partial "v1/reviews.html" . }}
+    {{ partial "v1/home/features.html" . }}
+{{ end }}
+
+{{ define "footer" }}
+   {{ partial "v1/footer.html" . }} 
+{{ end }}
+
+{{ define "scripts" }}
+   {{ partial "v1/scripts2.html" .}}
+{{ end }}

@@ -1,0 +1,53 @@
+.header--privacy {
+    min-height: 1rem;
+
+    &::before,
+    &:after {
+        display: none;
+    }
+
+    .header__container {
+        padding-top: 11rem;
+        padding-bottom: 3.8rem;
+    }
+
+    .header__title {
+        font-size: 3rem;
+        line-height: 1.15;
+        max-width: 59.438rem;
+        @include horizontal-center;
+        margin-top: 1.35rem;
+        margin-bottom: 2.7rem;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        .header__container {
+            padding-top: calc(11rem * 1.333);
+            padding-bottom: calc(3.8rem * 1.333);
+        }
+
+        .header__title {
+            font-size: 4rem;
+            max-width: 79.35rem;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        .header__container {
+            padding-top: 5.7rem;
+            padding-bottom: .1rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        .header__title {
+            font-size: 2.125rem;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .header__bg {
+            top: 4.5%;
+        }
+    }
+}

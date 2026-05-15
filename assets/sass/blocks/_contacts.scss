@@ -1,0 +1,440 @@
+.contacts {
+    &__container {
+        padding-bottom: 6.9rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2.188rem;
+        row-gap: 1.375rem;
+        max-width: 60.875rem;
+        @include horizontal-center;
+    }
+
+    @media (min-width: $laptop-min) {
+        &__col--full {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+
+            .contact {
+                max-width: 100%;
+            }
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        &__container {
+            padding-bottom: calc(6.9rem * 1.333);
+        }
+
+        &__grid {
+            column-gap: 2.92rem;
+            row-gap: 1.84rem;
+            max-width: 81.27rem;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        &__grid {
+            display: block;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        &__container {
+            padding-inline: 1.5rem;
+            padding-top: 1.9rem;
+            padding-bottom: 3.5rem;
+        }
+
+        &__col+&__col {
+            margin-top: 2rem;
+        }
+    }
+}
+
+
+.contact {
+    max-width: 100%;
+    width: 100%;
+    min-height: 13.75rem;
+    position: relative;
+    text-align: center;
+    padding-top: 2.9rem;
+    padding-bottom: 2.7rem;
+    margin-bottom: 20px;
+
+    &__inner {
+        width: 100%;
+        height: auto;
+        @include flex-center;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include full-size;
+        background: rgba(90, 83, 140, .24);
+        backdrop-filter: blur(5px);
+        pointer-events: none;
+        clip-path: polygon(0% 2rem,
+                2rem 0%,
+                47% 0%,
+                calc(47% + 1rem) .7rem,
+                calc(100% - 1.6rem) .7rem,
+                100% 2rem,
+                100% calc(100% - 1rem),
+                calc(100% - 1rem) 100%,
+                calc(52% + 1rem) 100%,
+                calc(52% - 0rem) calc(100% - .6rem),
+                1.4rem calc(100% - .6rem),
+                0% calc(100% - 2rem));
+    }
+
+    &__line-1 {
+        position: absolute;
+        top: 0;
+        left: 2rem;
+        width: calc(47% - 2rem);
+        height: 1px;
+        background-color: rgba(51, 54, 123, 1);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 1.2rem;
+            height: 1px;
+            background-color: rgba(51, 54, 123, 1);
+            transform: rotate(37deg);
+            transform-origin: 0 0;
+        }
+    }
+
+    &__line-2 {
+        position: absolute;
+        top: .7rem;
+        right: 1.6rem;
+        width: calc(100% - 47% - 2.5rem);
+        height: 1px;
+        background-color: rgba(51, 54, 123, 1);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 2.05rem;
+            height: 1px;
+            background-color: rgba(51, 54, 123, 1);
+            transform: rotate(39deg);
+            transform-origin: 0 0;
+        }
+    }
+
+    &__line-3 {
+        position: absolute;
+        top: 2rem;
+        right: 0;
+        width: 1px;
+        height: calc(100% - 2rem - 1rem);
+        background: linear-gradient(to bottom, rgba(51, 54, 123, 1) 0%, rgba(21, 33, 54, 1) 100%);
+    }
+
+    &__line-4 {
+        position: absolute;
+        bottom: 0;
+        right: 1rem;
+        height: 1px;
+        width: calc(100% - 52% - 1rem - 1.1rem);
+        background-color: rgba(21, 33, 54, 1);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 1.4rem;
+            height: 1px;
+            background-color: rgba(21, 33, 54, 1);
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 100%;
+            width: 1.24rem;
+            height: 1px;
+            background-color: rgba(21, 33, 54, 1);
+            transform: rotate(29deg);
+            transform-origin: 100% 100%;
+        }
+    }
+
+    &__line-5 {
+        position: absolute;
+        bottom: .6rem;
+        right: calc(100% - 52%);
+        height: 1px;
+        width: calc(100% - 48% - 1.4rem);
+        background-color: rgba(21, 33, 54, 1);
+    }
+
+    &__line-6 {
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        width: 1px;
+        height: calc(100% - 2rem - 2rem);
+        background: linear-gradient(to bottom, rgba(51, 54, 123, 1) 0%, rgba(21, 33, 54, 1) 100%);
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            width: 1px;
+            height: 2.8rem;
+            transform: rotate(45deg);
+            transform-origin: 0% 100%;
+            background-color: rgba(51, 54, 123, 1);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(100% - 1px);
+            left: 0;
+            width: 1px;
+            height: 1.95rem;
+            transform: rotate(-44deg);
+            transform-origin: 100% 0%;
+            background-color: rgba(21, 33, 54, 1);
+        }
+    }
+
+    &__title {
+        font-family: $font-title;
+        font-size: 30px;
+        line-height: 1.13;
+        font-style: normal;
+        font-weight: 400;
+        color: $gray-light;
+        text-shadow: $title-shadow-2;
+        margin-block: 0;
+    }
+
+    &__btn-chat,
+    &__btn-email,
+    &__btn-tel {
+        height: 4.5rem;
+        min-height: 4.5rem;
+        margin-top: 1rem;
+    }
+
+    &__btn-chat {
+        font-size: 22px;
+        line-height: 1.2;
+        width: 16.125rem;
+        min-width: 16.125rem;
+        margin-bottom: .4rem;
+    }
+
+    &__btn-email,
+    &__btn-tel {
+        width: 24.875rem;
+        font-size: 1.375rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: uppercase;
+
+        .btn__text {
+            top: 47%;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            .btn__text {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__btn-tel {
+        width: 20.5rem;
+    }
+
+    &__toll-free,
+    &__care-hours {
+        color: rgba($white, .8);
+        font-size: 1rem;
+        line-height: 1.3;
+        text-transform: uppercase;
+        margin-top: 0;
+        letter-spacing: 2px;
+    }
+
+    &__toll-free {
+        margin-top: .95rem;
+        margin-bottom: 1.55rem;
+    }
+
+    &__care-hours {
+        margin-bottom: .5rem;
+    }
+
+    &__working-hours {
+        font-size: 22px;
+        line-height: 1.3;
+        @include reset-list;
+        margin-bottom: 0;
+        letter-spacing: .5px;
+    }
+
+    &__working-hours-item+&__working-hours-item {
+        margin-top: .5rem;
+    }
+
+    &--call {
+        padding-top: 3.2rem;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            min-height: calc(13.75rem * 1.333);
+            padding-top: 3.87rem;
+            padding-bottom: 3.6rem;
+            margin-bottom: 1.67rem;
+        }
+
+        &__title {
+            font-size: 2.5rem;
+        }
+
+        &__btn-chat,
+        &__btn-email,
+        &__btn-tel {
+            height: calc(4.5rem * 1.333);
+            min-height: calc(4.5rem * 1.333);
+            margin-top: calc(1rem * 1.333);
+        }
+
+        &__btn-chat {
+            font-size: 1.84rem;
+            width: 22.78rem;
+            margin-bottom: .53rem;
+        }
+
+        &__btn-email,
+        &__btn-tel {
+            width: calc(24.875rem * 1.333);
+            font-size: calc(1.375rem * 1.333);
+
+            .btn__text {
+                top: 50%;
+            }
+        }
+
+        &__btn-tel {
+            width: calc(20.5rem * 1.333);
+        }
+
+        &__toll-free,
+        &__care-hours {
+            font-size: 1.34rem;
+        }
+
+        &__toll-free {
+            margin-top: calc(.95rem * 1.333);
+            margin-bottom: calc(1.55rem * 1.333);
+        }
+
+        &__care-hours {
+            margin-bottom: .67rem;
+        }
+
+        &__working-hours {
+            font-size: 1.83rem;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__btn-email,
+        &__btn-tel {
+            .btn__text {
+                top: 49%;
+            }
+        }
+
+        &__btn-email {
+            font-size: 1.125rem;
+            width: 20.5rem;
+            min-width: 20.5rem;
+        }
+
+        &__btn-tel {
+            width: 18.625rem;
+            min-width: 18.625rem;
+        }
+
+        &--chat {
+            .contact__title {
+                font-size: 1.875rem;
+            }
+        }
+
+        &--email {
+            font-size: 1.125rem;
+            min-height: 13.125rem;
+        }
+
+        &--call {
+            font-size: 1.375rem;
+            padding-top: 3rem;
+            min-height: 24.625rem;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        &--btn-chat {
+            .contact__title {
+                font-size: 1.875rem;
+            }
+        }
+
+        &--btn-email {
+            min-height: 194px;
+            padding-bottom: 2.5rem;
+        }
+
+        &__toll-free {
+            margin-top: .75rem;
+            margin-bottom: 1.45rem;
+        }
+    }
+
+    @media (max-width: 380px) {
+        &__btn-email {
+            font-size: 1.125rem;
+            width: 18.5rem;
+            min-width: 18.5rem;
+        }
+    }
+}

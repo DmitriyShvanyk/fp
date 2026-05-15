@@ -1,0 +1,19 @@
+.shipping {
+    &__container {
+        padding-top: .65rem;
+        padding-bottom: 2.5rem;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        &__container {
+            padding-top: calc(.65rem * 1.333);
+            padding-bottom: calc(2.5rem * 1.333);
+        }
+    }
+
+    @media (max-width: $tablet) {
+        &__container {
+            padding-bottom: 2.9rem;
+        }
+    }
+}

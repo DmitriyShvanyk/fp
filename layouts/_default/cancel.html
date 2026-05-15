@@ -1,0 +1,37 @@
+{{ define "main" }}
+    <header class="header header--cancel relative">
+        <div class="container relative header__container">
+            <h1 class="header__title text-center">
+                Cancel&nbsp;Your Friday&nbsp;Plans Subscription Online, Anytime
+                <span>No&nbsp;Need&nbsp;to Talk&nbsp;to Anyone!</span>
+            </h1>
+        </div>
+        <div class="header__video-container">
+            <video class="header__video" autoplay loop muted playsinline preload="auto">
+                <source src="/video/cancel.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <picture class="header__bg">
+            <source media="(min-width: 992px)" srcset="/images/how-to-cancel/header/header-bg-min.png">
+            <source media="(max-width: 991px)" srcset="/images/how-to-cancel/header/header-bg-m-min.png">
+            <img class="header__bg-img" src="/images/how-to-cancel/header/header-bg-m-min.png" alt="">
+        </picture>
+    </header>
+
+    <main>
+
+        <div class="section-combined section-combined--cancel">
+
+            <section class="cancel">
+                <div class="container relative cancel__container">
+                    {{ .Content }}
+                </div>
+            </section>
+
+            <div class="section-combined__bg-lines"></div>
+            <div class="section-combined__shape"></div>
+        </div>
+
+    </main>
+{{ end }}

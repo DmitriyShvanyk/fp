@@ -1,0 +1,18 @@
+$logo-width: 2rem;
+$logo-height: 2.875rem;
+
+.logo {
+    width: $logo-width;
+    height: $logo-height;
+
+    &__img {
+        @include position-relative-full;
+    }
+
+    @media (max-width: $tablet) {
+        & {
+            width: calc(#{$logo-width} / 1.23);
+            height: calc(#{$logo-height} / 1.23);
+        }
+    }
+}

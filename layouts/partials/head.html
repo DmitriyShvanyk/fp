@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<title>
+{{ block "title" . }}
+    Friday Plans | {{ page.Title }}
+{{ end }}</title>
+<meta content="{{ .Site.Title }}" property="og:title">
+<meta content="{{ .Site.Params.description }}" name="description">
+<meta content="{{ .Site.Params.description }}" property="og:description">
+<meta content="{{ .Site.Title }}" property="twitter:title">
+<meta content="{{ .Site.Params.description }}" property="twitter:description">
+{{ with resources.Get "images/link-preview-1200x630.jpg" }}
+<meta content="{{ .RelPermalink }}" property="og:image">
+<meta content="{{ .RelPermalink }}" property="twitter:image">
+{{ end }}
+<meta property="og:type" content="website">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="facebook-domain-verification" content="4v70c8jhn6h5mxbrbz7tkw8sxe2jdy">
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ with resources.Get "favicon.png" }}
+    <link rel="shortcut icon" href="{{ .RelPermalink }}" type="image/x-icon">
+{{ end }}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+{{ if .IsHome }}
+<script src="https://cdn-3.convertexperiments.com/js/10005721-10006415.js"></script>
+{{ end }}
+
+{{ $options := dict "targetPath" "css/style.css" "enableSourceMap" true }}
+{{ if hugo.IsProduction }}
+    {{ $options = dict "targetPath" "css/style.css" "outputStyle" "compressed" }}
+{{ end }}
+
+{{ with resources.Get "sass/style.scss" }}
+    {{ $style := . | toCSS $options | postCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ else }}
+    <link rel="stylesheet" href="/css/style.css">
+{{ end }}

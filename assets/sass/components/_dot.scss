@@ -1,0 +1,59 @@
+$dot-size: 1.125rem;
+$dot-bg: rgba($cyan, .15);
+$dot-border-radius: 50%;
+
+.dot {
+    position: relative;
+    display: inline-flex;
+    width: $dot-size;
+    height: $dot-size;
+    background-color: $dot-bg;
+    border-radius: $dot-border-radius;
+
+    &::before,
+    &::after {
+        content: '';
+        @include centerer;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    &::before {
+        width: 1rem;
+        height: 1rem;
+        background-color: rgba($cyan, .35);
+    }
+
+    &::after {
+        width: .625rem;
+        height: .625rem;
+        background-color: rgba($cyan, 1);
+    }
+
+    &--lg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            width: calc($dot-size * 1.333);
+            height: calc($dot-size * 1.333);
+        }
+
+        &::before {
+            width: 1.34rem;
+            height: 1.34rem;
+        }
+
+        &::after {
+            width: .83rem;
+            height: .83rem;
+        }
+
+        &--lg {
+            width: 1.67rem;
+            height: 1.67rem;
+        }
+    }
+}

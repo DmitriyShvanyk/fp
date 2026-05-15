@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /terms-of-use/
+Disallow: /consent-to-telehealth/
+Disallow: /privacy-policy/
+Disallow: /physician-code-of-conduct/

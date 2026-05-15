@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.Locale site.Language.Lang "en" }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class="{{- page.Params.bodyClass }}">
+
+{{ block "menu" . }}
+    {{ if not .Params.disableMenu }}
+        {{ partial "menu.html" . }}
+    {{ end }}
+{{ end }}
+
+{{ block "navbar" . }}
+    {{ partial "navbar.html" . }}
+{{ end }}
+
+{{ block "main" .}}
+{{ .Content }}
+{{ end }}
+
+{{ block "footer" . }}
+    {{ partial "footer.html" . }}
+{{ end }}
+{{ partial "sprites.html" .}}
+{{ block "scripts" . }}
+{{ end }}
+{{ partial "scripts.html" .}}
+</body>
+</html>

@@ -1,0 +1,45 @@
+<script>
+    (function() {
+
+        'use strict';
+        
+        function initNavbarMenu() {
+            const navbar = document.querySelector('.navbar');
+            if (!navbar) return;
+
+            const hamburger = navbar.querySelector('.navbar__hamburger');
+            const menuList = navbar.querySelector('.navbar__menu');
+            const htmlElement = document.documentElement;
+
+            if (!hamburger || !menuList) return;
+
+            function closeMenu() {
+                navbar.classList.remove('is-open');
+                hamburger.classList.remove('is-active');
+                htmlElement.classList.remove('is-lock');
+            }
+
+            function toggleMenu() {
+                navbar.classList.toggle('is-open');
+                hamburger.classList.toggle('is-active');
+                htmlElement.classList.toggle('is-lock');
+            }
+
+            hamburger.addEventListener('click', (event) => {
+                event.stopPropagation(); 
+                toggleMenu();
+            });
+
+            document.addEventListener('click', (event) => {
+                const isClickInsideNavbar = navbar.contains(event.target);
+                
+                if (!isClickInsideNavbar && navbar.classList.contains('is-open')) {
+                    closeMenu();
+                }
+            });
+        }
+
+        initNavbarMenu();
+
+    })();
+</script>

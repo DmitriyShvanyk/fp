@@ -1,0 +1,374 @@
+$price-deal-width: 60.813rem;
+$price-deal-height: 33.625rem;
+$price-deal-shape: polygon(2.2rem 0.3rem, 2.7rem 0%, calc(100% - 2.2rem - 0.3rem) 0%, calc(100% - 2.2rem) 0.3rem, calc(100% - 2.2rem) 52%, 100% calc(52% + 3.3rem), 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0.5rem 100%, 0% calc(100% - 0.5rem), 0% calc(52% + 3.5rem), 2.2rem 52%);
+$price-deal-shape-lg: polygon(3rem 0.3rem, 3rem 0%, calc(100% - 3rem - 0.3rem) 0%, calc(100% - 3rem) 0.3rem, calc(100% - 3rem) 52%, 100% calc(52% + 4.3rem), 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0.5rem 100%, 0% calc(100% - 0.5rem), 0% calc(51.5% + 4.8rem), 3rem 51.5%);
+
+.price-deal {
+    max-width: $price-deal-width;
+    min-height: $price-deal-height;
+    width: 100%;
+    @include horizontal-center;
+    text-align: center;
+    position: relative;
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        padding-top: 3.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    &__title {
+        max-width: 36rem;
+        font-family: $font-title;
+        color: $gray-light;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.875rem;
+        line-height: 1.14;
+        margin-top: 0;
+        margin-bottom: 3.7rem;
+        @include horizontal-center;
+        text-shadow: $title-shadow-2;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: calc(100% - 19.0625rem) 19.0625rem;
+        max-width: 36.25rem;
+        @include horizontal-center;
+    }
+
+    &__list {
+        @include reset-list;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    &__item+&__item {
+        margin-top: 1.4rem;
+    }
+
+    &__link {
+        color: $white;
+        font-weight: 300;
+        font-size: 1.5rem;
+        line-height: 0;
+        @include flex-center;
+        width: 19.0625rem;
+        height: 3.688rem;
+        text-decoration: none;
+        position: relative;
+        pointer-events: none;
+
+        sup {
+            font-size: 60%;
+        }
+
+        &-bg {
+            @include centerer;
+            @include full-size;
+            color: $cyan;
+            fill-opacity: .16;
+            transition: fill-opacity .3s ease;
+        }
+
+        &-lines,
+        &-dot {
+            position: absolute;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        &-lines {
+            top: calc(50% - 3px);
+            left: 1px;
+        }
+
+        &-dot {
+            top: 50%;
+            left: 0;
+        }
+
+        &-line-1,
+        &-line-2,
+        &-dot-2 {
+            position: absolute;
+        }
+
+        &-line-1,
+        &-line-2 {
+            right: 100%;
+            width: 4.0625rem;
+            height: 1px;
+            background-color: $cyan;
+        }
+
+        &-line-1 {
+            top: 50%;
+        }
+
+        &-line-2 {
+            top: 0;
+            transform: rotate(-41deg);
+            transform-origin: 100% 0;
+
+            &.is-other-way {
+                transform: rotate(38deg);
+            }
+        }
+
+        &-dot-2 {
+            top: -.625rem;
+            left: -.625rem;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $white;
+            text-decoration: none;
+
+            .price-deal__link-bg {
+                fill-opacity: .32;
+            }
+        }
+    }
+
+    &__pict {
+        position: relative;
+        top: -2.8rem;
+        left: -3rem;
+        margin-bottom: -2.5rem;
+    }
+
+    &__img {
+        width: 19.688rem;
+        min-width: 19.688rem;
+        height: 24.063rem;
+    }
+
+    &__shape,
+    &__bg {
+        display: none;
+        @include position-absolute-full;
+        pointer-events: none;
+    }
+
+    &__shape {
+        clip-path: $price-deal-shape;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: rgba(90, 83, 140, .24);
+            backdrop-filter: blur(5px);
+        }
+    }
+
+    &__bg {
+        background: url(../images/pricing/header/price-deal-shape.svg) no-repeat center top;
+        background-size: contain;
+        z-index: 1;
+    }
+
+    &__line {
+        display: none;
+    }
+
+    @media (min-width: $laptop-min) {
+        &__shape,
+        &__bg {
+            display: block;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            max-width: calc(#{$price-deal-width} * 1.333);
+            min-height: calc(#{$price-deal-height} * 1.333);
+        }
+
+        &__inner {
+            padding-top: calc(3.5rem * 1.333);
+            padding-left: calc(1rem * 1.333);
+            padding-right: calc(1rem * 1.333);
+        }
+
+        &__title {
+            max-width: 48.06rem;
+            font-size: 2.5rem;
+        }
+
+        &__grid {
+            grid-template-columns: calc(100% - 25.45rem) 25.45rem;
+            max-width: 48.39rem;
+        }
+
+        &__list {
+            margin-top: 2rem;
+        }
+
+        &__item+&__item {
+            margin-top: 1.87rem;
+        }
+
+        &__link {
+            font-size: 2rem;
+
+            &,
+            &-bg {
+                width: 25.45rem;
+                height: 4.92rem;
+            }
+
+            &-line-1,
+            &-line-2 {
+                width: 5.42rem;
+            }
+
+            &-dot-2 {
+                top: -.83rem;
+                left: -.83rem;
+            }
+        }
+
+        &__pict {
+            top: calc(-2.8rem * 1.333);
+            left: calc(-3rem * 1.333);
+            margin-bottom: calc(-2.5rem * 1.333);
+        }
+
+        &__img {
+            width: calc(19.688rem * 1.333);
+            min-width: calc(19.688rem * 1.333);
+            height: calc(24.063rem * 1.333);
+        }
+
+        &__shape {
+            clip-path: $price-deal-shape-lg;
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            height: auto;
+        }
+
+        &__shape {
+            clip-path: polygon(0% 30px, 30px 0%, calc(53% - 16px) 0%, 53% 13px, calc(100% - 30px) 13px, 100% 35px, 100% calc(100% - 30px), calc(100% - 30px) 100%, calc(52% + 20px) 100%, 52% calc(100% - 11px), 13px calc(100% - 11px), 0 calc(100% - 30px));
+        }
+
+        &__inner {
+            padding-top: .37rem;
+            padding-bottom: 0;
+        }
+
+        &__title {
+            font-size: 1.75rem;
+            line-height: 1.185;
+            margin-bottom: 1.45rem;
+        }
+
+        &__grid {
+            grid-template-columns: none;
+        }
+
+        &__pict {
+            top: -1.15rem;
+            left: 0;
+            margin-bottom: 0;
+        }
+
+        &__img {
+            max-width: 16.1875rem;
+            min-width: 16.1875rem;
+            max-height: 19.75rem;
+            @include full-size;
+        }
+
+        &__content {
+            margin-top: -3.75rem;
+            padding-left: 1.75rem;
+        }
+
+        &__list {
+            max-width: 19.0625rem;
+            @include horizontal-center;
+        }
+
+        &__item+&__item {
+            margin-top: .5rem;
+        }
+
+        &__link {
+            &-line-1 {
+                top: 50%;
+                width: 1.2rem;
+            }
+
+            &-line-2 {
+                width: 1.19rem;
+                transform-origin: 100% 100%;
+
+                &,
+                &.is-other-way {
+                    transform: rotate(37deg);
+                }
+            }
+
+            &-dot-2 {
+                display: none;
+            }
+        }
+
+        &__line,
+        &__line-2,
+        &__line-3 {
+            position: absolute;
+            background-color: $cyan;
+        }
+
+        &__line {
+            display: block;
+            bottom: 11px;
+            right: calc(200% - 5px);
+            width: 1px;
+            height: 18rem;
+
+            &-2 {
+                top: 0;
+                left: 0;
+                width: 1rem;
+                height: 1px;
+                transform: rotate(-45deg);
+                transform-origin: 0 0;
+            }
+
+            &-3 {
+                top: 0;
+                left: 100%;
+                width: 5rem;
+                height: 1px;
+                transform: rotate(45deg);
+                transform-origin: 0 0;
+            }
+        }
+
+        &__dot {
+            position: absolute;
+            top: 50%;
+            left: calc(100% - 4px);
+            transform: translateY(-50%);
+        }
+    }
+
+    @media (max-width: $mobile-sm) {
+        &__title {
+            span {
+                white-space: nowrap;
+            }
+        }
+    }
+}

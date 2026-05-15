@@ -1,0 +1,56 @@
+$marquee-fs: 6.25rem;
+$marquee-text-stroke: 1px rgba($cyan, .1);
+$marquee-animation: marquee 70s linear infinite;
+
+.marquee {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+
+    &+& {
+        margin-top: 0;
+    }
+
+    &__content {
+        font-family: $font-title;
+        font-size: $marquee-fs;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: .08em;
+        color: transparent;
+        -webkit-text-stroke: $marquee-text-stroke;
+        text-transform: uppercase;
+        @include reset-list;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        min-width: 100%;
+        animation: $marquee-animation;
+    }
+
+    &--reverse {
+        .marquee__content {
+            animation-direction: reverse;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        &__content {
+            font-size: calc($marquee-fs * 1.333);
+        }
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+}

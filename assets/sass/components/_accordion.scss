@@ -1,0 +1,197 @@
+$accordion-subtitle-ff: $font-title;
+$accordion-subtitle-fs: 1.25rem;
+$accordion-subtitle-color: $white;
+$accordion-subtitle-color-hover: $cyan;
+$accordion-icon-size: 1.25rem;
+
+.accordion {
+    &__item {
+        position: relative;
+        border-bottom: 1px solid rgba($white, .1);
+    }
+
+    &__control {
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    &__head {
+        @include flex-center-vertical;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        padding-right: 1.5rem;
+        position: relative;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            .accordion__subtitle {
+                color: $accordion-subtitle-color-hover;
+            }
+
+            .accordion__icon {
+                color: $cyan;
+
+                &-cross {
+                    opacity: .4;
+                    color: rgba($cyan, 1);
+                }
+            }
+        }
+    }
+
+    &__subtitle {
+        font-family: $accordion-subtitle-ff;
+        font-size: $accordion-subtitle-fs;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.3;
+        color: $accordion-subtitle-color;
+        margin-block: 0;
+        transition: color .3s ease;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: $accordion-icon-size;
+        height: $accordion-icon-size;
+        transform: translateY(-50%);
+
+        svg {
+            @include position-absolute-full;
+        }
+
+        &-minus {
+            opacity: 0;
+            color: rgba($white, 1);
+        }
+
+        &-cross {
+            opacity: .4;
+            color: rgba($white, 1);
+            transition: color .3s ease;
+        }
+    }
+
+    &__collapse {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-top .3s ease;
+    }
+
+    &__subtitle,
+    &__text {
+        max-width: 50.688rem;
+    }
+
+    &__text {
+        color: rgba($white, .8);
+        line-height: 1.55;
+        padding-top: .5rem;
+        padding-bottom: 1.625rem;
+
+        p {
+            margin-block: 0;
+        }
+
+        p+p {
+            margin-top: 1rem;
+        }
+    }
+
+    &__link {
+        color: rgba($white, .8);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: rgba($white, 1);
+            text-decoration: none;
+        }
+    }
+
+    &__control {
+        &:checked~.accordion__head .accordion__subtitle {
+            color: $cyan;
+        }
+
+        &:checked~.accordion__head .accordion__icon-minus {
+            opacity: 1;
+        }
+
+        &:checked~.accordion__head .accordion__icon .accordion__icon-cross {
+            opacity: 0;
+        }
+
+        &:checked~.accordion__collapse {
+            margin-top: -1rem;
+            max-height: 62.5rem;
+            transition: max-height 1s ease-in-out;
+        }
+    }
+
+    @media (min-width: $large-desktop-min) {
+        &__head {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-right: 2rem;
+        }
+
+        &__subtitle {
+            font-size: calc(#{$accordion-subtitle-fs} * 1.333);
+        }
+
+        &__icon {
+            width: calc(#{$accordion-icon-size} * 1.333);
+            height: calc(#{$accordion-icon-size} * 1.333);
+        }
+
+        &__text {
+            margin-top: -.67rem;
+            padding-bottom: 2.17rem;
+
+            p+p {
+                margin-top: 1.33rem;
+            }
+        }
+
+        &__subtitle,
+        &__text {
+            max-width: calc(50.688rem * 1.333);
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        &__subtitle {
+            padding-right: .75rem;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__text {
+            font-size: 1.5rem;
+            line-height: 1.3;
+            padding-top: .7rem;
+            padding-bottom: 1.5rem;
+            padding-right: .2rem;
+        }
+
+        .accordion__icon {
+            right: -.2rem;
+        }
+
+        &__control {
+            &:checked~.accordion__collapse {
+                margin-top: -1.33rem;
+            }
+        }
+    }
+}

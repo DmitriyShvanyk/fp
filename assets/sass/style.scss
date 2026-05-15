@@ -1,0 +1,128 @@
+@charset 'utf-8';
+
+
+/* ==================== ABSTRACTS ==================== */
+
+@import 'abstracts/variable';
+@import 'abstracts/mixins';
+@import 'abstracts/helpers';
+
+
+/* ==================== BASE ==================== */
+
+@import 'base/fonts';
+@import 'base/normalize';
+@import 'base/basic';
+
+
+
+/* ==================== COMPONENTS ==================== */
+
+@import 'components/btn';
+@import 'components/logo';
+@import 'components/container';
+@import 'components/title';
+@import 'components/dot';
+@import 'components/accordion';
+@import 'components/icon';
+@import 'components/clipped-block';
+@import 'components/media';
+@import 'components/price-deal';
+@import 'components/modal';
+@import 'components/sticky-cta';
+
+
+
+/* ==================== BLOCKS ==================== */
+
+@import 'blocks/article';
+@import 'blocks/menu';
+@import 'blocks/navbar';
+@import 'blocks/header/header';
+@import 'blocks/trusted';
+@import 'blocks/treatment';
+@import 'blocks/benefits/benefits';
+@import 'blocks/reviews';
+@import 'blocks/features';
+@import 'blocks/safety';
+@import 'blocks/footer';
+
+@import 'blocks/section-combined';
+@import 'blocks/faq';
+@import 'blocks/questions';
+@import 'blocks/contacts';
+@import 'blocks/problem';
+@import 'blocks/matters';
+@import 'blocks/low-prices';
+@import 'blocks/shipping';
+@import 'blocks/madagascar';
+@import 'blocks/legal-info';
+
+
+@import 'blocks/theme-neon-pulse/index';
+@import 'blocks/theme-cyber-purple/index';
+@import 'blocks/theme-cyberpunk/index';
+
+
+.header--home .header__lead .br-is-mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .header--home .header__lead .br-is-desktop {
+    display: none;
+  }
+
+  .header--home .header__lead .br-is-mobile {
+    display: block;
+  }
+}
+
+.header--home .header__btn::after{
+  content: 'CHECK ELIGIBILITY';
+}
+
+@media (max-width: 767px) {
+  .sticky-cta__btn {
+    min-width: 19.875rem;
+  }
+
+  .sticky-cta__btn .btn__text {
+    font-size: 0;
+  }
+
+  .sticky-cta__btn .btn__text::before {
+    content: 'CHECK ELIGIBILITY';
+    font-size: 1.5rem;
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .benefits--home .benefits__subtitle br {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .trusted__title {
+    color: #fff;
+  }
+}
+@media (max-width: 576px) {
+  .treatment__title--m {
+    font-size: 1.875rem;
+  }
+}
+@media (max-width: 576px) {
+  .benefits--home .benefits__item--3 .benefits__lead {
+    padding-left: 0;
+    letter-spacing: -.06rem;
+  }
+}
+@media (max-width: 767px) {
+  .benefits--home .benefits__item:nth-child(6) .benefits__lead {
+    padding-inline: 0rem;
+  }
+}
+
+

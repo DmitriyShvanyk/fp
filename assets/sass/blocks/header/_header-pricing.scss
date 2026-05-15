@@ -1,0 +1,63 @@
+.header--pricing {
+    min-height: 47.25rem;
+
+    &::before,
+    &::after {
+        display: none;
+    }
+
+    .header__container {
+        padding-top: 7.8rem;
+        padding-bottom: 3.5rem;
+        z-index: 1;
+    }
+
+    .header__title {
+        max-width: 60.938rem;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 1.15;
+        color: $cyan;
+        text-shadow: $title-shadow;
+        @include horizontal-center;
+        margin-bottom: 6rem;
+    }
+
+    .header__bg {
+        height: 78%;
+    }
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            min-height: calc(47.25rem * 1.333);
+        }
+
+        .header__container {
+            padding-top: calc(7.8rem * 1.333);
+            padding-bottom: calc(3.5rem * 1.333);
+        }
+
+        .header__title {
+            max-width: 81.35rem;
+            font-size: 4rem;
+            margin-bottom: calc(6rem * 1.333);
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        .header__container {
+            padding-top: 5.25rem;
+            padding-bottom: 1px;
+        }
+
+        .header__title {
+            font-size: 2.125rem;
+            margin-bottom: 3rem;
+        }
+
+        .header__bg {
+            height: 48%;
+        }
+    }
+}

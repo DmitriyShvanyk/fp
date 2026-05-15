@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.Locale site.Language.Lang "en" }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class="{{- page.Params.bodyClass }}">
+<!--menu.begin-->
+<div class="menu"></div>
+<!--menu.end-->
+
+{{ partial "navbar.html" .}}
+
+<header class="header header--404 relative">
+    <div class="container relative header__container">
+        <h1 class="header__title text-center">Oops, the page&nbsp;you <span class="header__title-nowrap-m">were looking</span> for&nbsp;doesn't exist</h1>
+
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-offset="100">
+            <a href="/" class="btn btn--anim header__btn">
+                <span class="btn__bg"></span>
+                <span class="btn__text">return home</span>
+            </a>
+        </div>
+    </div>
+    <picture class="header__bg">
+        <source media="(min-width: 992px)" srcset="/images/404/header/header-bg-min.png">
+        <source media="(max-width: 991px)" srcset="/images/404/header/header-bg-m-min.png">
+        <img class="header__bg-img" src="/images/404/header/header-bg-m-min.png" alt="">
+    </picture>
+</header>
+
+{{ partial "footer.html" .}}
+{{ partial "sprites.html" .}}
+{{ partial "scripts.html" .}}
+</body>
+</html>

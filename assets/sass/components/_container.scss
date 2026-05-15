@@ -1,0 +1,20 @@
+$container-width: 64.375rem;
+
+.container {
+    max-width: $container-width;
+    width: 100%;
+    padding: 2rem 1rem;
+    @include horizontal-center;
+
+    @media (min-width: $large-desktop-min) {
+        & {
+            max-width: calc(#{$container-width} * 1.333);
+        }
+    }
+
+    @media (max-width: $mobile-md) {
+        & {
+            padding-inline: .5rem;
+        }
+    }
+}
