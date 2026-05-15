@@ -13,9 +13,9 @@
 
             <p class="footer__ps">* Prescription products require an online consultation with a medical provider who will determine if a prescription is appropriate.</p>
             <div class="footer__logos">
-                {{ $image1 := resources.Get "images/theme-neon-pulse/footer/logo1.png" }}
-                {{ $image2 := resources.Get "images/theme-neon-pulse/footer/logo2.png" }}
-                {{ $image3 := resources.Get "images/theme-neon-pulse/footer/logo3.png" }}
+                {{ $image1 := resources.Get "{{ "images/theme-neon-pulse/footer/logo1.png" | absURL }}" }}
+                {{ $image2 := resources.Get "{{ "images/theme-neon-pulse/footer/logo2.png" | absURL }}" }}
+                {{ $image3 := resources.Get "{{ "images/theme-neon-pulse/footer/logo3.png" | absURL }}" }}
                 {{ with $image1 }}
                 <a href="https://www.legitscript.com/websites/?checker_keywords=fridayplans.com" class="footer__logos-link" target="_blank" title="Verify LegitScript Approval for www.fridayplans.com">
                     <img class="footer__logos-img" src="{{ .RelPermalink }}" alt="Verify LegitScript Approval for www.fridayplans.com">
