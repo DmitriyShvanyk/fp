@@ -23,7 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.161.1
-      NODE_OPTIONS: "--experimental-permission --allow-fs-read"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
