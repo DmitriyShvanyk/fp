@@ -1,6 +1,7 @@
 {
-    "buildCommand": "hugo",
-    "outputDirectory": "public",
-    "installCommand": "npm install",
-    "framework": "hugo"
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.161.1"
+    }
+  }
 }
