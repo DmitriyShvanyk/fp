@@ -5,15 +5,19 @@
     border-radius: .625rem;
     padding: $padding;
     background: linear-gradient(180deg, rgba(200, 53, 251, .4) 0%, rgba(85, 46, 250, .4) 100%);
-    -webkit-mask: linear-gradient($white 0 0) content-box, linear-gradient($white 0 0);
-    -webkit-mask-composite: xor;
+    mask: linear-gradient($white 0 0) content-box, linear-gradient($white 0 0);
     mask-composite: exclude;
     pointer-events: none;
 }
 
+$color-dark-indigo: #272150;
+$color-light-gray:  #EBEBEB;
+$color-magenta:     #FF2A8A;
+$color-neon-cyan:   #07C9FF;
+$color-neon-purple: #7D01B6;
+
 $bg-neon-pulse: linear-gradient(180deg, #0F0322 0%, #0A0418 50%, #0F0322 100%);
 $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
-
 
 
 
@@ -23,33 +27,32 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 .page-home.theme-neon-pulse {
     background-color: $bg-neon-pulse;
 
-    @media (min-width: 1200px) {
+    @media (min-width: $desktop-min) {
         &:after {
             content: '';
-            position: absolute; bottom: 0; left: 0;
+            position: absolute; 
+            bottom: 0; 
+            left: 0;
             width: 100%;
-            height: 1098px;
+            height: 68.625rem;
             background: url(../images/theme-neon-pulse/bg.png) no-repeat center top;
             background-size: cover;
             filter: blur(2px);
             pointer-events: none;
-            mask-image: linear-gradient(
-                to bottom,
-                transparent 0%,
-                black 15%,
-                black 100%
-            );
+            mask-image: linear-gradient(to bottom, transparent 0%, $black 15%, $black 100%); 
         }
     }
 
     @media (max-width: $tablet) {
         &:after {
             content: '';
-            position: absolute; bottom: 10%; left: 50%;
-            width: 2005px;
-            height: 938px;
-            background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, 0.4) 0%, rgba(114, 36, 150, 0) 100%);
-            filter: blur(8px);
+            position: absolute; 
+            bottom: 10%; 
+            left: 50%;
+            width: 125.313rem;
+            height: 58.625rem;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, .4) 0%, rgba(114, 36, 150, 0) 100%);
+            filter: blur(.5rem);
             transform: translateX(-50%) rotate(90deg);
             mask-image: unset;
         }
@@ -92,12 +95,12 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
                 .mn-charge {
                     fill: none;
-                    stroke: #FF2A8A;
+                    stroke: $color-magenta;
                     stroke-width: 2;
                     stroke-linecap: round;
                     stroke-dasharray: 0 200;
                     opacity: 0;
-                    filter: drop-shadow(0 0 4px rgba(255, 42, 138, .95));
+                    filter: drop-shadow(0 0 .25rem rgba($color-magenta, .95));
                     transition: opacity .2s ease;
                 }
             }
@@ -105,20 +108,19 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             &:hover,    
             &:focus,
             &:active {
-
                 .mn-charge {
                     opacity: 1;
-                    animation: mn-charge 1.4s linear infinite;
+                    animation: mnCharge 1.4s linear infinite;
                 }
 
-                @keyframes mn-charge {
+                @keyframes mnCharge {
                     0%   { stroke-dasharray: 0 200; stroke-dashoffset: 0; }
                     60%  { stroke-dasharray: 200 200; stroke-dashoffset: -200; }
                     100% { stroke-dasharray: 200 200; stroke-dashoffset: -400; }
                 }
 
                 .btn-menu__icon {
-                    stroke: #FF2A8A;
+                    stroke: $color-magenta;
                 }
             }
 
@@ -166,7 +168,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
             .lgn-band {
                 fill: transparent;
-                stroke: #07C9FF;
+                stroke: $color-neon-cyan;
                 stroke-width: 1;
             }
 
@@ -178,43 +180,43 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             &:focus,
             &:active {
                 .lgn-band.b-1 {
-                    animation: lgn-corrupt-1 .9s steps(3, end) infinite;
+                    animation: lgnCorrupt1 .9s steps(3, end) infinite;
                 }
 
-                .lgn--data-corrupt:hover .lgn-band.b-2 {
-                    animation: lgn-corrupt-2 .9s steps(3, end) infinite;
+                .lgn-band.b-2 {
+                    animation: lgnCorrupt2 .9s steps(3, end) infinite;
                 }
 
                 .lgn-band.b-3 {
-                    animation: lgn-corrupt-3 .9s steps(3, end) infinite;
+                    animation: lgnCorrupt3 .9s steps(3, end) infinite;
                 }
 
                 .btn__text {
-                    animation: lgn-corrupt-text .9s steps(3, end) infinite;
+                    animation: lgnCorruptText .9s steps(3, end) infinite;
                 }
 
-                @keyframes lgn-corrupt-1 {
-                    0%, 100% { transform: translateX(0); stroke: #07C9FF; }
-                    33%      { transform: translateX(-3px); stroke: #FF2A8A; }
+                @keyframes lgnCorrupt1 {
+                    0%, 100% { transform: translateX(0); stroke: $color-neon-cyan; }
+                    33%      { transform: translateX(-3px); stroke: $color-magenta; }
                     66%      { transform: translateX(2px); }
                 }
 
-                @keyframes lgn-corrupt-2 {
-                    0%, 100% { transform: translateX(0); stroke: #07C9FF; }
+                @keyframes lgnCorrupt2 {
+                    0%, 100% { transform: translateX(0); stroke: $color-neon-cyan; }
                     33%      { transform: translateX(4px); }
-                    66%      { transform: translateX(-2px); stroke: #FF2A8A; }
+                    66%      { transform: translateX(-2px); stroke: $color-magenta; }
                 }
 
-                @keyframes lgn-corrupt-3 {
-                    0%, 100% { transform: translateX(0); stroke: #07C9FF; }
+                @keyframes lgnCorrupt3 {
+                    0%, 100% { transform: translateX(0); stroke: $color-neon-cyan; }
                     33%      { transform: translateX(-2px); }
-                    66%      { transform: translateX(3px); stroke: #FF2A8A; }
+                    66%      { transform: translateX(3px); stroke: $color-magenta; }
                 }
 
-                @keyframes lgn-corrupt-text {
+                @keyframes lgnCorruptText {
                     0%, 100% { transform: translate(-50%,-50%); text-shadow: none; }
-                    33%      { transform: translate(calc(-50% - 1px), -50%); text-shadow: 2px 0 #FF2A8A, -2px 0 #07C9FF; }
-                    66%      { transform: translate(calc(-50% + 1px), -50%); text-shadow: -2px 0 #FF2A8A, 2px 0 #07C9FF; }
+                    33%      { transform: translate(calc(-50% - 1px), -50%); text-shadow: 2px 0 $color-magenta, -2px 0 $color-neon-cyan; }
+                    66%      { transform: translate(calc(-50% + 1px), -50%); text-shadow: -2px 0 $color-magenta, 2px 0 $color-neon-cyan; }
                 }
             }
         }
@@ -250,7 +252,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 calc(50% - 4rem + 1.5rem) 100%, 
                 calc(50% - 4rem) calc(100% - 0.937rem), 
                 0 calc(100% - 0.937rem)
-                );
+            );
         }
 
         &__menu {
@@ -278,13 +280,13 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         @media (min-width: $large-desktop-min) {
             .menu__list {
-                padding: calc(2.65rem * 1.333) calc(1.5rem * 1.333) calc(1.5rem * 1.333);
-                max-width: calc(77.8rem * 1.333);
+                padding: calc(2.65rem * #{$scale-ld}) calc(1.5rem * #{$scale-ld}) calc(1.5rem * #{$scale-ld});
+                max-width: calc(77.8rem * #{$scale-ld});
             }
 
             &.is-open {  
                 .navbar__menu {
-                    max-height: calc(42rem * 1.333);
+                    max-height: calc(42rem * #{$scale-ld});
                 }
             }
         }
@@ -322,7 +324,9 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 height: 2.5rem;
 
                 &-bg {
-                    position: absolute; top: 0; left: 0;
+                    position: absolute; 
+                    top: 0; 
+                    left: 0;
                     width: 100%;
                     height: 100%;
                 }
@@ -396,8 +400,8 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             height: auto;
             transform: translateX(3.5rem);
             mask-image: 
-                linear-gradient(to right, transparent 0%, #000 25%), 
-                linear-gradient(to bottom, #000 75%, transparent 100%);
+                linear-gradient(to right, transparent 0%, $black 25%), 
+                linear-gradient(to bottom, $black 75%, transparent 100%);
             mask-composite: intersect;
         }
 
@@ -447,7 +451,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             font-size: 1.375rem;
             line-height: 1.1;
             max-width: 100%;
-            text-shadow: 0 0 8px rgba(40, 241, 254, .8);
+            text-shadow: 0 0 .5rem rgba(40, 241, 254, .8);
 
             &--m {
                 display: none;
@@ -462,7 +466,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             height: 7.375rem;
             min-height: 7.375rem;
             column-gap: 1.45rem;
-            background: rgba(39, 33, 80, .24);
+            background: rgba($color-dark-indigo, .24);
             backdrop-filter: blur(.25rem);
             border-radius: .625rem;
             width: 100%;
@@ -471,7 +475,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             &::before {
                 @include gradient-border-overlay(.094rem);
             }
-        }
+        }        
 
         .header__icon {
             position: relative;
@@ -484,7 +488,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 width: 100%;
                 height: 100%;
                 transform: translate(-50%, -50%);
-                background-color: #7D01B6;
+                background-color: $color-neon-purple;
                 filter: blur(20px);
             }
         }
@@ -511,65 +515,65 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         @media (min-width: $large-desktop-min) {
             & {
-                min-height: calc(62.5rem * 1.333);
+                min-height: calc(62.5rem * #{$scale-ld});
             }
 
             .header__bg {
-                transform: translateX(calc(3.5rem * 1.333));
+                transform: translateX(calc(3.5rem * #{$scale-ld}));
             }
 
             .header__container {
-                max-width: calc(77rem * 1.333);
-                padding-bottom: calc(.5rem * 1.333);
+                max-width: calc(77rem * #{$scale-ld});
+                padding-bottom: calc(.5rem * #{$scale-ld});
             }
 
             .header__content {
-                max-width: calc(38.188rem * 1.333);
+                max-width: calc(38.188rem * #{$scale-ld});
             }
 
             .header__title {
-                margin-bottom: calc(.75rem * 1.333);
+                margin-bottom: calc(.75rem * #{$scale-ld});
             }
 
             .header__subtitle {
-                font-size: calc(2rem * 1.333);
-                margin-bottom: calc(1rem * 1.333);
+                font-size: calc(2rem * #{$scale-ld});
+                margin-bottom: calc(1rem * #{$scale-ld});
             }
 
             .header__lead {
-                margin-bottom: calc(1.8rem * 1.333);
+                margin-bottom: calc(1.8rem * #{$scale-ld});
             }
 
             .header__btn {
-                min-width: calc(19.25rem * 1.333);
+                min-width: calc(19.25rem * #{$scale-ld});
             }
 
             .header__list {
-                margin-top: calc(6.5rem * 1.333);
-                font-size: calc(1.375rem * 1.333);
+                margin-top: calc(6.5rem * #{$scale-ld});
+                font-size: calc(1.375rem * #{$scale-ld});
             }
 
             .header__list-item {
-                height: calc(7.375rem * 1.333);
-                min-height: calc(7.375rem * 1.333);
-                column-gap: calc(1.45rem * 1.333);
-                padding-left: calc(2rem * 1.333);
+                height: calc(7.375rem * #{$scale-ld});
+                min-height: calc(7.375rem * #{$scale-ld});
+                column-gap: calc(1.45rem * #{$scale-ld});
+                padding-left: calc(2rem * #{$scale-ld});
 
                 &::before {
-                    padding: calc(.094rem * 1.333);
+                    padding: calc(.094rem * #{$scale-ld});
                 }
             }
 
             .header__list-icon {
-                width: calc(3.688rem * 1.333);
-                min-width: calc(3.688rem * 1.333);
-                height: calc(4.563rem * 1.333);
-                min-height: calc(4.563rem * 1.333);
+                width: calc(3.688rem * #{$scale-ld});
+                min-width: calc(3.688rem * #{$scale-ld});
+                height: calc(4.563rem * #{$scale-ld});
+                min-height: calc(4.563rem * #{$scale-ld});
             }
 
             .header__safety {
-                margin-top: calc(2.5rem * 1.333);
-                margin-bottom: calc(.65rem * 1.333);
+                margin-top: calc(2.5rem * #{$scale-ld});
+                margin-bottom: calc(.65rem * #{$scale-ld});
             }
         }
 
@@ -587,10 +591,9 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 display: block;
                 transform: translateX(-50%); 
                 mask-image: 
-                    linear-gradient(to right, transparent 0%, #000 25%), 
-                    linear-gradient(to bottom, #000 75%, transparent 100%),
-                    linear-gradient(to left, transparent 0%, #000 25%);
-                mask-composite: intersect;
+                    linear-gradient(to right, transparent 0%, $black 25%), 
+                    linear-gradient(to bottom, $black 75%, transparent 100%),
+                    linear-gradient(to left, transparent 0%, $black 25%);
             }
 
             .header__container {
@@ -604,7 +607,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             }
 
             .header__subtitle {
-                text-shadow: 0 0 8px rgba(40, 241, 254, 0.56);
+                text-shadow: 0 0 .5rem rgba(40, 241, 254, .56);
             }
 
             .header__list {
@@ -690,7 +693,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
         @media (max-width: $mobile-md) {
             &::after {
                 height: 85%;
-                background: linear-gradient(to bottom, rgba(3, 13, 22, 0) 0%, rgba(3, 13, 22, 0) 1%, rgba(3, 13, 22, 0.9) 15%, #030d16 100%);
+                background: linear-gradient(to bottom, rgba(3, 13, 22, 0) 0%, rgba(3, 13, 22, 0) 1%, rgba(3, 13, 22, .9) 15%, #030d16 100%);
             }
 
             .header__bg {
@@ -845,7 +848,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             align-items: center;
             position: relative;
             min-height: 37rem;
-            background: rgba(39, 33, 80, .24);
+            background: rgba($color-dark-indigo, .24);
             backdrop-filter: blur(.25rem);
             border-radius: .625rem;
             overflow: hidden;
@@ -878,7 +881,6 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             height: 90%;
             min-height: unset;
             object-fit: cover;
-            object-position: 100% 0;
             object-position: 75% 0%;
             mask-image: 
                 linear-gradient(to left, transparent 0%, $black 25%),                               
@@ -888,33 +890,33 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         @media (min-width: $large-desktop-min) {
             &__container {
-                max-width: calc(77rem * 1.333);
-                padding-top: calc(4rem * 1.333);
-                padding-bottom: calc(1rem * 1.333);
+                max-width: calc(77rem * #{$scale-ld});
+                padding-top: calc(4rem * #{$scale-ld});
+                padding-bottom: calc(1rem * #{$scale-ld});
             }
 
             &__title {
                 &--d {
-                    margin-top: calc(1.25rem * 1.333);
-                    margin-bottom: calc(2rem * 1.333);
+                    margin-top: calc(1.25rem * #{$scale-ld});
+                    margin-bottom: calc(2rem * #{$scale-ld});
                 }
             }
 
             &__items {
                 max-width: 100%;
-                min-height: calc(37rem * 1.333);
+                min-height: calc(37rem * #{$scale-ld});
 
                 &::before {
-                    padding: calc(.094rem * 1.333);
+                    padding: calc(.094rem * #{$scale-ld});
                 }
             }
 
             &__pict {
-                width: calc(100% - (42rem * 1.333));
+                width: calc(100% - (42rem * #{$scale-ld}));
             }
 
             &__content {
-                width: calc(42rem * 1.333);
+                width: calc(42rem * #{$scale-ld});
 
                 p {
                     max-width: 40rem;
@@ -961,10 +963,12 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 &::before,
                 &::after {
                     content: '';
-                    position: absolute; top: 0; left: 50%;
+                    position: absolute; 
+                    top: 0; 
+                    left: 50%;
                     width: 100vw;
                     height: 15%;
-                    background: linear-gradient(to bottom, #0b0419 0%, rgba(15, 3, 34, 0.7) 40%, rgba(15, 3, 34, 0) 100%);
+                    background: linear-gradient(to bottom, #0b0419 0%, rgba(15, 3, 34, .7) 40%, rgba(15, 3, 34, 0) 100%);
                     z-index: 2;
                     transform: translateX(-50%);
                     pointer-events: none;
@@ -973,7 +977,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 &::after {
                     top: auto;
                     bottom: 0;
-                    background: linear-gradient(to top, #0F0322 0%, rgba(15, 3, 34, 0.7) 40%, rgba(15, 3, 34, 0) 100%);
+                    background: linear-gradient(to top, #0F0322 0%, rgba(15, 3, 34, .7) 40%, rgba(15, 3, 34, 0) 100%);
                 }
             }
 
@@ -984,7 +988,6 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 transform: translateX(-50%);
                 object-position: 50% 50%;
                 mask-image: linear-gradient(to right, transparent 0%, $black 20%, $black 80%, transparent 100%), linear-gradient(to bottom, transparent 0%, $black 5%, $black 85%, transparent 100%);
-                mask-composite: intersect;
             }
 
             &__content {
@@ -1021,7 +1024,6 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 min-height: 100%;
                 object-position: -5rem 1rem;
                 mask-image: linear-gradient(to bottom, transparent 0%, $black 15%, $black 85%, transparent 100%);
-                mask-composite: intersect;
             }
         }
 
@@ -1030,7 +1032,6 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 left: 50%;
             }
         }
-
     }
 }
 
@@ -1065,7 +1066,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             padding: 2rem 1rem;
             position: relative;
             clip-path: none;
-            background: rgba(39, 33, 80, .24);
+            background: rgba($color-dark-indigo, .24);
             backdrop-filter: blur(.25rem);
             border-radius: .625rem;
             overflow: hidden;
@@ -1090,8 +1091,8 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 width: 85%;
                 height: 85%;
                 transform: translate(-50%, -50%);
-                background-color: #7D01B6;
-                filter: blur(20px);
+                background-color: $color-neon-purple;
+                filter: blur(1.25rem);
             }
 
             img {
@@ -1105,51 +1106,51 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             font-size: 1.625rem;
             text-transform: uppercase;
             margin-bottom: .5rem;
-            text-shadow: 0 0 24px #A467FF;
+            text-shadow: 0 0 1.5rem #A467FF;
         }
 
         .benefits__lead {
-            color: #EBEBEBCC;
+            color: rgba($color-light-gray, .8);
         }
 
         .benefits__ellipse {
-            background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, 0.4) 0%, rgba(114, 36, 150, 0) 100%);
+            background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, .4) 0%, rgba(114, 36, 150, 0) 100%);
         }
 
         @media (min-width: $large-desktop-min) {
             .benefits__container {
-                padding-top: calc(4rem * 1.333);
-                max-width: calc(77rem * 1.333);
+                padding-top: calc(4rem * #{$scale-ld});
+                max-width: calc(77rem * #{$scale-ld});
             }
 
             .benefits__title {
-                margin-bottom: calc(2rem * 1.333);
+                margin-bottom: calc(2rem * #{$scale-ld});
             }
 
             .benefits__items {
-                gap: calc(1.9rem * 1.333) calc(2.188rem * 1.333);
+                gap: calc(1.9rem * #{$scale-ld}) calc(2.188rem * #{$scale-ld});
             }
 
             .benefits__item {
-                padding: calc(2rem * 1.333) calc(1rem * 1.333);
+                padding: calc(2rem * #{$scale-ld}) calc(1rem * #{$scale-ld});
 
                 &::after {
-                    padding: calc(.094rem * 1.333)
+                    padding: calc(.094rem * #{$scale-ld})
                 }
             }
 
             .benefits__icon {
-                height: calc(5.375rem * 1.333);
-                margin-bottom: calc(.5rem * 1.333);
+                height: calc(5.375rem * #{$scale-ld});
+                margin-bottom: calc(.5rem * #{$scale-ld});
 
                 img {
-                    max-height: calc(5.375rem * 1.333);
+                    max-height: calc(5.375rem * #{$scale-ld});
                 }
             }
 
             .benefits__subtitle {
-                font-size: calc(1.625rem * 1.333);
-                margin-bottom: calc(.5rem * 1.333);
+                font-size: calc(1.625rem * #{$scale-ld});
+                margin-bottom: calc(.5rem * #{$scale-ld});
             }
         }
 
@@ -1228,7 +1229,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             padding: 1.6rem 2rem 1.6rem 1.75rem;
             position: relative;
             clip-path: none;
-            background: rgba(39, 33, 80, .24);
+            background: rgba($color-dark-indigo, .24);
             backdrop-filter: blur(.25rem);
             border-radius: .625rem;
             overflow: hidden;
@@ -1241,7 +1242,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 color: #F142AB;
                 font-size: 5rem;
                 line-height: 1;
-                font-family: Kellion, "Bai Jamjuree", -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                font-family: $font-title;
                 pointer-events: none;
             }
 
@@ -1258,7 +1259,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         &__lead,
         &__name {
-            color: #EBEBEBCC;
+            color: rgba($color-light-gray, .8);
         }
 
         &__btn-more {
@@ -1273,22 +1274,22 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             &::before,
             &::after {
                 content: '';
-                position: absolute; top: 0; left: 0;
+                position: absolute; 
+                top: 0; 
+                left: 0;
                 width: 100%;
                 height: 100%;
                 pointer-events: none;
                 transition: opacity .3s ease;
-            }
-
-            &::before {
-                background: url(../images/theme-neon-pulse/reviews/btn.svg) no-repeat 0 0;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-image: url(../images/theme-neon-pulse/reviews/btn.svg);
                 background-size: contain;
             }
 
             &::after {
                 opacity: 0;
-                background: url(../images/theme-neon-pulse/reviews/btn-hover.svg) no-repeat 0 0;
-                background-size: contain;
+                background-image: url(../images/theme-neon-pulse/reviews/btn-hover.svg);
             }
 
             &:hover::before,
@@ -1311,7 +1312,9 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
         }
 
         &__bg {
-            position: absolute; top: 50%; left: 0;
+            position: absolute; 
+            top: 50%; 
+            left: 0;
             width: 100%;
             height: 100%;
             background: url(../images/theme-neon-pulse/reviews/bg.png) no-repeat 0 0;
@@ -1322,33 +1325,33 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         @media (min-width: $large-desktop-min) {
             &__container {
-                max-width: calc(77rem * 1.333);         
+                max-width: calc(77rem * #{$scale-ld});         
             }
 
             &__title {
-                margin-bottom: calc(3rem * 1.333);
+                margin-bottom: calc(3rem * #{$scale-ld});
             }
 
             &__column {
-                margin-bottom: calc(1.25rem * 1.333);
+                margin-bottom: calc(1.25rem * #{$scale-ld});
             }
 
             &__card {
-                padding: calc(1.6rem * 1.333) calc(2.5rem * 1.333) calc(1.6rem * 1.333) calc(1.75rem * 1.333);
+                padding: calc(1.6rem * #{$scale-ld}) calc(2.5rem * #{$scale-ld}) calc(1.6rem * #{$scale-ld}) calc(1.75rem * #{$scale-ld});
 
                 &::before {
-                    top: calc(.8rem * 1.333);
-                    right: calc(1.1rem * 1.333);
-                    font-size: calc(5rem * 1.333);
+                    top: calc(.8rem * #{$scale-ld});
+                    right: calc(1.1rem * #{$scale-ld});
+                    font-size: calc(5rem * #{$scale-ld});
                 }
 
                 &::after {
-                    padding: calc(.094rem * 1.333);
+                    padding: calc(.094rem * #{$scale-ld});
                 }
             }
 
             &__btn-more {
-                margin-top: calc(-2rem * 1.333);
+                margin-top: calc(-2rem * #{$scale-ld});
             }
         }
 
@@ -1422,7 +1425,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             max-width: 100%;
             position: relative; 
             clip-path: none;
-            background: rgba(39, 33, 80, .24);
+            background-color: rgba($color-dark-indigo, .24);
             backdrop-filter: blur(.25rem);
             border-radius: .625rem;
             overflow: hidden;
@@ -1446,7 +1449,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
         }
 
         .features__text p {
-            color: #EBEBEBCC;
+            color: rgba($color-light-gray, .8);
         }
 
         .features__more {
@@ -1500,7 +1503,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         .features__ellipse--1 {
             top: 45%;
-            background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, 0.32) 0%, rgba(114, 36, 150, 0) 100%);
+            background: radial-gradient(50% 50% at 50% 50%, rgba(114, 36, 150, .32) 0%, rgba(114, 36, 150, 0) 100%);
             border: 1px solid $black;
             filter: blur(.5rem);
             transform: translateY(-50%) translateX(-50%);
@@ -1508,12 +1511,6 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         .media--home-1 {
             min-height: 21.688rem;
-
-            .media__pict,
-            .media__pict-img {
-                background-image: url(../images/theme-neon-pulse/features/home-1.png);
-                background-image: none;
-            }
 
             .features__video {
                 object-position: 1rem 0;
@@ -1524,13 +1521,6 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
         .media--home-2 {
             min-height: 24.25rem;
 
-            .media__pict,
-            .media__pict-img {
-                background-image: url(../images/theme-neon-pulse/features/home-2.png);
-                background-position: left top;
-                background-image: none;
-            }
-
             .features__video {
                 right: auto;
                 left: -7%;
@@ -1540,12 +1530,6 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         .media--home-3 {
             min-height: 31.188rem;
-
-            .media__pict,
-            .media__pict-img {
-                background-image: url(../images/theme-neon-pulse/features/home-3.png);
-                background-image: none;
-            }
 
             .features__content {
                 left: 0;
@@ -1576,30 +1560,31 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         @media (min-width: $large-desktop-min) {
             .features__container {
-                max-width: calc(77rem * 1.333);
+                max-width: calc(77rem * #{$scale-ld});
             }
 
             .features__block {
                 &.is-open {
-                    padding-block: calc(3.3rem * 1.333)!important;
+                    padding-block: calc(3.3rem * #{$scale-ld})!important;
                 }
             }
 
             .features__more {
-                margin-top: calc(1.25rem * 1.333);
-                column-gap: calc(.75rem * 1.333);
+                margin-top: calc(1.25rem * #{$scale-ld});
+                column-gap: calc(.75rem * #{$scale-ld});
 
                 svg {
-                    position: relative; top: .2rem;
+                    position: relative; 
+                    top: .2rem;
                 }
             }
 
             .features__subtitle {
-                font-size: calc(1.5rem * 1.333);
+                font-size: calc(1.5rem * #{$scale-ld});
             }
 
             .media--home-1 {
-                min-height: calc(21.688rem * 1.333);
+                min-height: calc(21.688rem * #{$scale-ld});
 
                 .features__content {
                     width: 52rem;
@@ -1607,15 +1592,15 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                 }
 
                 .features__body {
-                    padding-left: calc(3rem * 1.333)!important;
+                    padding-left: calc(3rem * #{$scale-ld})!important;
                 }
             }
 
             .media--home-2 {
-                min-height: calc(24.25rem * 1.333);
+                min-height: calc(24.25rem * #{$scale-ld});
 
                 .features__content {
-                    width: calc(42rem * 1.333)!important;
+                    width: calc(42rem * #{$scale-ld})!important;
                 }
 
                 .features__video {
@@ -1624,10 +1609,10 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
             }
 
             .media--home-3 {
-                min-height: calc(31.188rem * 1.3333);
+                min-height: calc(31.188rem * #{$scale-ld});
 
                 .features__body {
-                    padding-left: calc(3rem * 1.333)!important;
+                    padding-left: calc(3rem * #{$scale-ld})!important;
                 }
 
                 .features__content {
@@ -1638,7 +1623,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
             .media--home-2,
             .media--home-3 {
-                margin-top: calc(1.5rem * 1.333);
+                margin-top: calc(1.5rem * #{$scale-ld});
             }
         }        
 
@@ -1803,7 +1788,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                     width: calc(100% + 8.5rem);
                     max-width: calc(100% + 8.5rem);
                     left: 50%;
-                    transform: translateX(calc(-50%)) !important;                    
+                    transform: translateX(-50%)!important;                    
                 }
 
                 .features__video {
@@ -1818,7 +1803,7 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
                     width: calc(100% + 14rem);
                     max-width: calc(100% + 14rem);
                     left: 50%;
-                    transform: translateX(calc(-50%)) !important; 
+                    transform: translateX(-50%)!important; 
                 }
 
                 .features__video {
@@ -1875,19 +1860,19 @@ $gradient-neon-pulse: linear-gradient(87.86deg, #FF6DC0 -1.1%, #8F42FF 100%);
 
         @media (min-width: $large-desktop-min) {
             &__container {
-                padding-top: calc(3rem * 1.333);
+                padding-top: calc(3rem * #{$scale-ld});
             }
 
             &__ps {
-                margin-top: calc(1.4rem * 1.333);
+                margin-top: calc(1.4rem * #{$scale-ld});
             }
 
             &__logos {
-                max-width: calc(27rem * 1.333);
+                max-width: calc(27rem * #{$scale-ld});
             }
 
             &__logos-img--sure-scripts {
-                max-height: calc(3.375rem * 1.333);
+                max-height: calc(3.375rem * #{$scale-ld});
             }
         }
 

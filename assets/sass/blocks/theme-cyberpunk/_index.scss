@@ -76,7 +76,7 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
     @media (min-width: $large-desktop-min) {
         &::before {
-            max-width: calc(75rem * 1.333);
+            max-width: calc(75rem * #{$scale-ld});
         }
 
         .abstract-shape {
@@ -235,7 +235,7 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             &__container {
-                max-width: calc(75rem * 1.333);
+                max-width: calc(75rem * #{$scale-ld});
             }
         }
 
@@ -320,7 +320,7 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             &__list {
-                max-width: calc((72.75rem * 1.333) + 2rem);
+                max-width: calc((72.75rem * #{$scale-ld}) + 2rem);
             }
         }
 
@@ -578,50 +578,50 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             .header__container {
-                max-width: calc((75rem * 1.333) + 2rem);
-                padding-top: calc(10rem * 1.333);
+                max-width: calc((75rem * #{$scale-ld}) + 2rem);
+                padding-top: calc(10rem * #{$scale-ld});
             }
 
             .header__content {
-                max-width: calc(48.25rem * 1.333);
+                max-width: calc(48.25rem * #{$scale-ld});
             }
 
             .header__title {      
-                margin-top: calc(1.65rem * 1.333);
-                margin-bottom: calc(.9rem * 1.333);
+                margin-top: calc(1.65rem * #{$scale-ld});
+                margin-bottom: calc(.9rem * #{$scale-ld});
             }
 
             .header__lead {
-                max-width: calc(34.875rem * 1.333);
-                margin-top: calc(1rem * 1.333);
-                margin-bottom: calc(1.5rem * 1.333);
+                max-width: calc(34.875rem * #{$scale-ld});
+                margin-top: calc(1rem * #{$scale-ld});
+                margin-bottom: calc(1.5rem * #{$scale-ld});
             }
 
             .header__btn {
-                min-width: calc(18.125rem * 1.333);
-                min-height: calc(5.563rem * 1.333);
+                min-width: calc(18.125rem * #{$scale-ld});
+                min-height: calc(5.563rem * #{$scale-ld});
 
                 svg {
-                    margin-left: calc(.5rem * 1.333);
+                    margin-left: calc(.5rem * #{$scale-ld});
                 }
             }
 
             .header__list {
-                font-size: calc(1.125rem * 1.333);
-                max-width: calc(25.6rem * 1.333);
-                margin-top: calc(3rem * 1.333);
+                font-size: calc(1.125rem * #{$scale-ld});
+                max-width: calc(25.6rem * #{$scale-ld});
+                margin-top: calc(3rem * #{$scale-ld});
 
                 &-item {
-                    height: calc(6.375rem * 1.333);
-                    min-height: calc(6.375rem * 1.333);
-                    padding-left: calc(2rem * 1.333);
+                    height: calc(6.375rem * #{$scale-ld});
+                    min-height: calc(6.375rem * #{$scale-ld});
+                    padding-left: calc(2rem * #{$scale-ld});
                 }
 
                 &-icon {
-                    width: calc(4.063rem * 1.333);
-                    min-width: calc(4.063rem * 1.333);
-                    height: calc(4.063rem * 1.333);
-                    min-height: calc(4.063rem * 1.333);
+                    width: calc(4.063rem * #{$scale-ld});
+                    min-width: calc(4.063rem * #{$scale-ld});
+                    height: calc(4.063rem * #{$scale-ld});
+                    min-height: calc(4.063rem * #{$scale-ld});
                 }
 
                 &-line {  
@@ -636,32 +636,32 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
             .trusted {
                 &__box {
-                    max-width: calc(45rem * 1.333);
-                    min-height: calc(18.438rem * 1.333);
-                    bottom: calc(4rem * 1.333); 
-                    right: calc(-6.75rem * 1.333);
-                    padding: calc(2.75rem * 1.333) calc(1rem * 1.333) calc(1rem * 1.333);
+                    max-width: calc(45rem * #{$scale-ld});
+                    min-height: calc(18.438rem * #{$scale-ld});
+                    bottom: calc(4rem * #{$scale-ld}); 
+                    right: calc(-6.75rem * #{$scale-ld});
+                    padding: calc(2.75rem * #{$scale-ld}) calc(1rem * #{$scale-ld}) calc(1rem * #{$scale-ld});
                 }
 
                 &__title {
-                    font-size: calc(1.625rem * 1.333);
+                    font-size: calc(1.625rem * #{$scale-ld});
 
                     &-white {
-                        margin-top: calc(.5rem * 1.333);
+                        margin-top: calc(.5rem * #{$scale-ld});
                     }
                 }
 
                 &__lead {
-                    margin-bottom: calc(.6rem * 1.333);
+                    margin-bottom: calc(.6rem * #{$scale-ld});
                 }
 
 
                 &__logos {
-                    max-width: calc(32.5rem * 1.333);
+                    max-width: calc(32.5rem * #{$scale-ld});
                 }
 
                 &__logo-img {
-                    max-height: calc(2.3rem * 1.333);
+                    max-height: calc(2.3rem * #{$scale-ld});
                 }
             }
         }
@@ -700,7 +700,6 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
                 width: calc(100% + 22rem);
                 max-width: calc(100% + 22rem);
                 position: relative;
-                right: 0;
                 top: .5rem;
                 right: auto;
                 left: calc(50% - 23%);
@@ -974,7 +973,6 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         &__border {
             position: absolute; 
-            z-index: 1;
             width: 5.875rem;
             height: 5.375rem;        
             filter: drop-shadow(0 0 9px rgba(136, 218, 255, 0.8));  
@@ -1003,13 +1001,11 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
             }
 
             &--tl {
-                top: 2.65rem;
                 top: -.25rem;
                 left: -.25rem;
             }
 
-            &--tr {                
-                top: 2.65rem;
+            &--tr {         
                 top: -.25rem;
                 right: -.25rem;
                 transform: scale(-1, 1);
@@ -1043,32 +1039,32 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             &__container {
-                max-width: calc((75rem * 1.333) + 2rem);
-                padding-top: calc(4.8rem * 1.333);
-                padding-bottom: calc(6.2rem * 1.333);
+                max-width: calc((75rem * #{$scale-ld}) + 2rem);
+                padding-top: calc(4.8rem * #{$scale-ld});
+                padding-bottom: calc(6.2rem * #{$scale-ld});
             }
 
             &__title {
-                font-size: calc(2.125rem * 1.333);
+                font-size: calc(2.125rem * #{$scale-ld});
 
                 &--d {
-                    margin-top: calc(1.25rem * 1.333);
-                    margin-bottom: calc(2.4rem * 1.333);
+                    margin-top: calc(1.25rem * #{$scale-ld});
+                    margin-bottom: calc(2.4rem * #{$scale-ld});
                 }
             }
 
             &__items {
-                min-height: calc(29.75rem * 1.333);
+                min-height: calc(29.75rem * #{$scale-ld});
                 max-width: 100%;
             }
 
             &__pict {
-                width: calc(28.25rem * 1.333);
-                min-height: calc(29.063rem * 1.333);
+                width: calc(28.25rem * #{$scale-ld});
+                min-height: calc(29.063rem * #{$scale-ld});
             }
 
             &__video-container {
-                min-height: calc(29.063rem * 1.333);
+                min-height: calc(29.063rem * #{$scale-ld});
                 clip-path: polygon(
                     4rem 0, 
                     calc(100% - 4rem) 0, 
@@ -1081,8 +1077,8 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
             }
 
             &__border {
-                width: calc(5.875rem * 1.333);
-                height: calc(5.375rem * 1.333);    
+                width: calc(5.875rem * #{$scale-ld});
+                height: calc(5.375rem * #{$scale-ld});    
 
                 &::before {
                     clip-path: polygon(
@@ -1099,17 +1095,17 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
                 &--tl,
                 &--tr {                
-                    top: calc(-.25rem * 1.333);
+                    top: calc(-.25rem * #{$scale-ld});
                 }
             }
 
             &__content {
-                width: calc(38.813rem * 1.333);
-                margin-top: calc(.6rem * 1.333);
-                left: calc(1.35rem * 1.333);
+                width: calc(38.813rem * #{$scale-ld});
+                margin-top: calc(.6rem * #{$scale-ld});
+                left: calc(1.35rem * #{$scale-ld});
 
                 p {
-                    max-width: calc(36.5rem * 1.333);
+                    max-width: calc(36.5rem * #{$scale-ld});
                 }
             }
         } 
@@ -1442,28 +1438,28 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             .benefits__container {
-                max-width: calc((75rem * 1.333) + 2rem);
-                padding-top: calc(2.5rem * 1.333);    
-                padding-bottom: calc(4.5rem * 1.333); 
+                max-width: calc((75rem * #{$scale-ld}) + 2rem);
+                padding-top: calc(2.5rem * #{$scale-ld});    
+                padding-bottom: calc(4.5rem * #{$scale-ld}); 
             }
 
             .benefits__title {
-                margin-bottom: calc(4.5rem * 1.333);
+                margin-bottom: calc(4.5rem * #{$scale-ld});
             }
 
             .benefits__items {
-                gap: calc(3.375rem * 1.333);
+                gap: calc(3.375rem * #{$scale-ld});
             }
 
             .benefits__item {       
-                min-height: calc(18.188rem * 1.333)!important;
-                padding: calc(1rem * 1.333) calc(1.25rem * 1.333);
+                min-height: calc(18.188rem * #{$scale-ld})!important;
+                padding: calc(1rem * #{$scale-ld}) calc(1.25rem * #{$scale-ld});
 
                 &--1,
                 &--2 {
                     .benefits__icon {
                         img {
-                            max-height: calc(5.125rem * 1.333);
+                            max-height: calc(5.125rem * #{$scale-ld});
                         }
                     }
                 }
@@ -1471,7 +1467,7 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
                 &--3 {
                     .benefits__icon {
                         img {
-                            max-height: calc(5.438rem * 1.333);
+                            max-height: calc(5.438rem * #{$scale-ld});
                         }
                     }
                 }
@@ -1480,7 +1476,7 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
                 &--6 {
                     .benefits__icon {
                         img {
-                            max-height: calc(5rem * 1.333);
+                            max-height: calc(5rem * #{$scale-ld});
                         }
                     }
                 }
@@ -1488,25 +1484,25 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
                 &--5 {
                     .benefits__icon {
                         img {
-                            max-height: calc(5.125rem * 1.333);
+                            max-height: calc(5.125rem * #{$scale-ld});
                         }
                     }
                 }
             }
 
             .benefits__icon {
-                height: calc(5.438rem * 1.333);
-                margin-bottom: calc(.5rem * 1.333);
+                height: calc(5.438rem * #{$scale-ld});
+                margin-bottom: calc(.5rem * #{$scale-ld});
             }
 
             .benefits__subtitle {
-                margin-bottom: calc(.25rem * 1.333);
+                margin-bottom: calc(.25rem * #{$scale-ld});
             }
 
             .benefits__lead {
-                margin-bottom: calc(.25rem * 1.333);
-                max-width: calc(24rem * 1.333);
-                font-size: calc(1.375rem * 1.333);
+                margin-bottom: calc(.25rem * #{$scale-ld});
+                max-width: calc(24rem * #{$scale-ld});
+                font-size: calc(1.375rem * #{$scale-ld});
             }
         }    
 
@@ -1669,12 +1665,12 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             &__container {
-                max-width: calc((75rem * 1.333) + 2rem);
-                padding-bottom: calc(5.6rem * 1.333);
+                max-width: calc((75rem * #{$scale-ld}) + 2rem);
+                padding-bottom: calc(5.6rem * #{$scale-ld});
             }
 
             &__body {
-                max-height: calc(33rem * 1.333);
+                max-height: calc(33rem * #{$scale-ld});
             }
 
             &__card {
@@ -1682,8 +1678,8 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
             }
 
             &__btn-more {
-                min-width: calc(18.125rem * 1.333);
-                min-height: calc(5.563rem * 1.333);
+                min-width: calc(18.125rem * #{$scale-ld});
+                min-height: calc(5.563rem * #{$scale-ld});
             }
         }
 
@@ -1887,13 +1883,13 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             .features__container {
-                max-width: calc((75rem * 1.333) + 2rem);
-                padding-bottom: calc(6rem * 1.333);
+                max-width: calc((75rem * #{$scale-ld}) + 2rem);
+                padding-bottom: calc(6rem * #{$scale-ld});
             }
 
             .features__border {
-                width: calc(5.875rem * 1.333);
-                height: calc(5.375rem * 1.333);    
+                width: calc(5.875rem * #{$scale-ld});
+                height: calc(5.375rem * #{$scale-ld});
 
                 &::before {
                     clip-path: polygon(
@@ -1923,32 +1919,32 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
             }
 
             .features__pict {
-                width: calc(33.375rem * 1.333);
-                min-width: calc(33.375rem * 1.333);                
+                width: calc(33.375rem * #{$scale-ld});
+                min-width: calc(33.375rem * #{$scale-ld});                
             }
 
             .media--home-1 {
                 .features__pict {
-                    height: calc(28.125rem * 1.333);
-                    min-height: calc(28.125rem * 1.333);
+                    height: calc(28.125rem * #{$scale-ld});
+                    min-height: calc(28.125rem * #{$scale-ld});
                 }
             }
 
             .media--home-2 {
                 .features__pict {
-                    width: calc(33.25rem * 1.333);
-                    min-width: calc(33.25rem * 1.333);
-                    height: calc(31.813rem * 1.333);
-                    min-height: calc(31.813rem * 1.333);
+                    width: calc(33.25rem * #{$scale-ld});
+                    min-width: calc(33.25rem * #{$scale-ld});
+                    height: calc(31.813rem * #{$scale-ld});
+                    min-height: calc(31.813rem * #{$scale-ld});
                 }
             }
 
             .media--home-3 {
-                margin-top: calc(8rem * 1.333);
+                margin-top: calc(8rem * #{$scale-ld});
 
                 .features__pict {                
-                    height: calc(43.75rem * 1.333);
-                    min-height: calc(43.75rem * 1.333);
+                    height: calc(43.75rem * #{$scale-ld});
+                    min-height: calc(43.75rem * #{$scale-ld});
                 }
             }
         }
@@ -2090,10 +2086,8 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
                         margin-bottom: 1rem;
                     }
                 }
-            }
-             
+            }             
         }
-
     }
 }
 
@@ -2133,19 +2127,19 @@ $bg-cyberpunk: linear-gradient(180deg, #0C0B25 0%, #05051F 157.75%);
 
         @media (min-width: $large-desktop-min) {
             &__container {
-                padding-top: calc(3rem * 1.333);
+                padding-top: calc(3rem * #{$scale-ld});
             }
 
             &__ps {
-                margin-top: calc(1.4rem * 1.333);
+                margin-top: calc(1.4rem * #{$scale-ld});
             }
 
             &__logos {
-                max-width: calc(27rem * 1.333);
+                max-width: calc(27rem * #{$scale-ld});
             }
 
             &__logos-img--sure-scripts {
-                max-height: calc(3.375rem * 1.333);
+                max-height: calc(3.375rem * #{$scale-ld});
             }
         }
 
