@@ -2,12 +2,11 @@
   "name": "fp_mainsite",
   "version": "1.0.0",
   "scripts": {
-    "build": "hugo"
+    "build": "hugo --gc --minify"
   },
   "devDependencies": {
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.14",
-    "postcss-cli": "^11.0.1",
-    "hugo-bin": "latest"
+    "postcss-cli": "^11.0.1"
   }
 }
