@@ -2,11 +2,11 @@
     <div class="deal__block"><div class="container relative deal__container">
         <div class="deal__grid">
             <div class="deal__pict">
-                <img class="deal__img" src="/images/deal/product.png" srcset="/images/deal/product@2x.png 2x" alt="">
+                <img class="deal__img" src="{{ "images/deal/product.png" | absURL }}" srcset="{{ "images/deal/product@2x.png" | absURL }} 2x" alt="">
                 <div class="deal__shadow"></div>
                 <div class="deal__bg">
                     <video class="deal__video" autoplay loop muted playsinline preload="auto">
-                        <source src="/video/deal.webm" type="video/webm">
+                        <source src="{{ "video/deal.webm" | absURL }}" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
                     <div class="deal__gradient-bottom"></div>

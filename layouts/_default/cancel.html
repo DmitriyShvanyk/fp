@@ -8,14 +8,14 @@
         </div>
         <div class="header__video-container">
             <video class="header__video" autoplay loop muted playsinline preload="auto">
-                <source src="/video/cancel.webm" type="video/webm">
+                <source src="{{ "video/cancel.webm" | absURL }}" type="video/webm">
                 Your browser does not support the video tag.
             </video>
         </div>
         <picture class="header__bg">
-            <source media="(min-width: 992px)" srcset="/images/how-to-cancel/header/header-bg-min.png">
-            <source media="(max-width: 991px)" srcset="/images/how-to-cancel/header/header-bg-m-min.png">
-            <img class="header__bg-img" src="/images/how-to-cancel/header/header-bg-m-min.png" alt="">
+            <source media="(min-width: 992px)" srcset="{{ "images/how-to-cancel/header/header-bg-min.png" | absURL }}">
+            <source media="(max-width: 991px)" srcset="{{ "images/how-to-cancel/header/header-bg-m-min.png" | absURL }}">
+            <img class="header__bg-img" src="{{ "images/how-to-cancel/header/header-bg-m-min.png" | absURL }}" alt="">
         </picture>
     </header>
 

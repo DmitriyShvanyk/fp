@@ -4,9 +4,9 @@
             <h1 class="header__title text-center">{{ page.Title }}</h1>
         </div>
         <picture class="header__bg">
-            <source media="(min-width: 992px)" srcset="/images/terms-of-use/header/header-bg-min.png">
-            <source media="(max-width: 991px)" srcset="/images/terms-of-use/header/header-bg-m-min.png">
-            <img class="header__bg-img" src="/images/terms-of-use/header/header-bg-m-min.png" alt="">
+            <source media="(min-width: 992px)" srcset="{{ "images/terms-of-use/header/header-bg-min.png" | absURL }}">
+            <source media="(max-width: 991px)" srcset="{{ "images/terms-of-use/header/header-bg-m-min.png" | absURL }}">
+            <img class="header__bg-img" src="{{ "images/terms-of-use/header/header-bg-m-min.png" | absURL }}" alt="">
         </picture>
     </header>
     <!--main.begin-->
@@ -44,8 +44,8 @@
             <!--legal-info.end-->
 
             <div class="section-combined__bg-lines"></div>
-            <img class="section-combined__shape-1" src="/images/bg/shape-1.svg" loading="lazy" alt="">
-            <img class="section-combined__shape-2" src="/images/bg/shape-2.svg" loading="lazy" alt="">
+            <img class="section-combined__shape-1" src="{{ "images/bg/shape-1.svg" | absURL }}" loading="lazy" alt="">
+            <img class="section-combined__shape-2" src="{{ "images/bg/shape-2.svg" | absURL }}" loading="lazy" alt="">
         </div>
         <!--section-combined.end-->
 
